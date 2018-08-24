@@ -1,0 +1,76 @@
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    overflow: hidden;
+    background-color: #f8f8f8;
+}
+
+.navList{
+    position: fixed;
+    width: 100%;
+    height: 1.33333rem;
+    background-color: #f9f9f9;
+    bottom: 0;
+    border-top: 1px solid #dedede;
+}
+
+.navList li{
+    text-align: center;
+    width: 1.333333rem;
+    height: 1.33333rem;
+}
+
+.showPic{
+    float: left;
+    margin-left: 1.2rem;
+    margin-top: 0.15rem;
+}
+
+.showPic div{
+    text-align: center;
+    font-size: 0.33rem;
+    color: #ff926b;
+}
+
+.takePic{
+    margin: 0 auto;
+    margin-top: -0.466667rem;     
+}
+
+.takePic div{
+    text-align: center;
+    font-size: 0.33rem;
+    color: #b1b1b1;
+}
+
+.about{
+    float: right;
+    margin-right: 1.2rem;
+    margin-top: -0.73rem;
+}
+
+.about div{
+    text-align: center;
+    font-size: 0.33rem;
+    color: #bbbbbb;
+}
+
+.camera{
+    width: 90%;         
+    height: 90%;
+}
+
+.house,
+.card{
+    width: 50%;
+    height: 45%;
+}
+
+li a{
+    width: 100%;
+    height: 100%;
+}
+

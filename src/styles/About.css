@@ -1,0 +1,110 @@
+.header{
+    width: 100%;
+    height: 3.266667rem;
+    overflow: hidden;
+    background-color: #ff916a;
+}
+
+.headPic{
+    float: left;        
+    width: 1.933333rem;
+    height: 1.933333rem;
+    background-color: black;
+    border-radius: 50%;
+    margin-left: 0.586667rem;
+}
+
+.headPic img{
+    width: 100%;
+    height: 100%;
+}
+
+.userinfo{
+    overflow: hidden;
+    line-height: 1.933333rem;
+    margin-top: 0.6rem;
+}
+
+.username{
+    color: #f7f7f7;
+    font-size: 0.426667rem;
+    margin-left: 0.373333rem;
+}
+
+.myInfo{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 0.4rem;
+}
+
+.firstCard,
+.secondCard{
+    overflow: hidden;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 6px 6px 20px 6px #f1f1f1;
+}
+
+.firstCard{
+    line-height: 1.333333rem;
+    height: 1.333333rem;
+}
+
+.icons{
+    float: left;
+    height: 100%;
+    line-height: 1.633333rem;
+    margin-left: 0.493333rem;
+}
+
+.icons img {
+    width: 0.6rem;
+    height: 0.6rem;   
+}
+
+.explain{
+    font-size: 0.39rem;
+    margin-left: 0.346667rem;
+}
+
+.numbers{
+    font-size: 0.4rem;
+    margin-left: 3.9rem;
+    color: #ff9d7a;
+}
+
+.secondCard{
+    margin-top: 0.5rem;
+    line-height: 5.066667rem;
+}
+
+.niceList{
+    width: 100%;
+}
+
+.niceList li{
+    overflow: hidden;
+    height: 1.333333rem;
+    line-height: 1.333333rem;
+    width: 100%;
+}
+
+.ruleWord{
+    height: 0.5rem;
+    line-height: 0.5rem;
+}
+
+.freeNiceNum{
+    margin-left: 3.5rem;
+}
+
+.getPraiseNum{
+    margin-left: 5.1rem;
+}
+
+.ruleWords{
+    margin-left: 1.466667rem;
+    margin-bottom: 0.5rem;
+    color: #a38080;
+    width: 50%;
+}
