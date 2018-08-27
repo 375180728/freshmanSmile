@@ -10,68 +10,15 @@ import rankIcon from '../images/rankIcon.png';
 import niceNumIcon from '../images/niceNumIcon.png';
 import banner from '../images/banner.png';
 
+import NewItem from './NewItem'
 
 function MyBody(props) {
     return (
         <div className="bannerContainer my-body">
-      <img src={banner} className="banner"/>
-      {props.children}
-    </div>
-        );
-}
-
-const json = {
-    "status": 200,
-    "code": 1,
-    "data": [
-        {
-            "major": "软件工程",
-            "college": "软件工程",
-            "date": "2018-08-25T06:51:27.000+0000",
-            "class_id": "13001609"
-        },
-        {
-            "major": "通信工程",
-            "college": "通信学院",
-            "date": "2018-08-20T05:37:38.000+0000",
-            "class_id": "01011603"
-        },
-        {
-            "major": "测试专业",
-            "college": "测试学院",
-            "date": "2018-08-19T05:37:38.000+0000",
-            "class_id": "test1"
-        }
-    ],
-    "msg": "succeed"
-};
-
-const data = json.data;
-
-
-const NUM_SECTIONS = 3;
-const NUM_ROWS_PER_SECTION = 4;
-let pageIndex = 0;
-
-const dataBlobs = {};
-let sectionIDs = [];
-let rowIDs = [];
-function genData(pIndex = 0) {
-    for (let i = 0; i < NUM_SECTIONS; i++) {
-        const ii = (pIndex * NUM_SECTIONS) + i;
-        const sectionName = `Section ${ii}`;
-        sectionIDs.push(sectionName);
-        dataBlobs[sectionName] = sectionName;
-        rowIDs[ii] = [];
-
-        for (let jj = 0; jj < NUM_ROWS_PER_SECTION; jj++) {
-            const rowName = `S${ii}, R${jj}`;
-            rowIDs[ii].push(rowName);
-            dataBlobs[rowName] = rowName;
-        }
-    }
-    sectionIDs = [...sectionIDs];
-    rowIDs = [...rowIDs];
+          <img src={banner} className="banner"/>
+          {props.children}
+        </div>
+    );
 }
 
 class NewList extends Component {
@@ -92,6 +39,42 @@ class NewList extends Component {
             isLoading: true,
             height: document.documentElement.clientHeight * 3 / 4,
         };
+
+        this.json = {
+            "status": 200,
+            "code": 1,
+            "data": [
+                {
+                    "major": "软件工程",
+                    "college": "软件工程",
+                    "date": "2018-08-25T06:51:27.000+0000",
+                    "class_id": "13001609",
+                    "score": '1000'
+                },
+                {
+                    "major": "通信工程",
+                    "college": "通信学院",
+                    "date": "2018-08-20T05:37:38.000+0000",
+                    "class_id": "01011603",
+                    "score": '1000'
+                },
+                {
+                    "major": "测试专业",
+                    "college": "测试学院",
+                    "date": "2018-08-19T05:37:38.000+0000",
+                    "class_id": "test1",
+                    "score": '1000'
+                }
+            ],
+            "msg": "succeed"
+        };
+        this.data = this.json.data;
+        this.NUM_SECTIONS = 3;
+        this.NUM_ROWS_PER_SECTION = 4;
+        this.dataBlobs = {};
+        this.pageIndex = 0;
+        this.sectionIDs = [];
+        this.rowIDs = [];
     }
 
     componentDidMount() {
@@ -101,14 +84,34 @@ class NewList extends Component {
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
         // simulate initial Ajax
         setTimeout(() => {
-            genData();
+            this.genData();
             this.setState({
-                dataSource: this.state.dataSource.cloneWithRowsAndSections(dataBlobs, sectionIDs, rowIDs),
+                dataSource: this.state.dataSource.cloneWithRowsAndSections(this.dataBlobs, this.sectionIDs, this.rowIDs),
                 isLoading: false,
                 height: hei,
             });
         }, 600);
     }
+
+    genData(pIndex = 0) {
+        for (let i = 0; i < this.NUM_SECTIONS; i++) {
+            const ii = (pIndex * this.NUM_SECTIONS) + i;
+            const sectionName = `Section ${ii}`;
+            this.sectionIDs.push(sectionName);
+            this.dataBlobs[sectionName] = sectionName;
+            this.rowIDs[ii] = [];
+
+            for (let jj = 0; jj < this.NUM_ROWS_PER_SECTION; jj++) {
+                const rowName = `S${ii}, R${jj}`;
+                this.rowIDs[ii].push(rowName);
+                this.dataBlobs[rowName] = rowName;
+            }
+        }
+        this.sectionIDs = [...this.sectionIDs];
+        this.rowIDs = [...this.rowIDs];
+    }
+
+    
 
     onEndReached = (event) => {
         // load new data
@@ -121,9 +124,9 @@ class NewList extends Component {
             isLoading: true
         });
         setTimeout(() => {
-            genData(++pageIndex);
+            this.genData(++this.pageIndex);
             this.setState({
-                dataSource: this.state.dataSource.cloneWithRowsAndSections(dataBlobs, sectionIDs, rowIDs),
+                dataSource: this.state.dataSource.cloneWithRowsAndSections(this.dataBlobs, this.sectionIDs, this.rowIDs),
                 isLoading: false,
             });
         }, 1000);
@@ -141,33 +144,14 @@ class NewList extends Component {
         );
         let index = 0;
         const row = (rowData, sectionID, rowID) => {
-            if (index > data.length - 1) {
+            if (index > this.data.length - 1) {
                 index = 0;
             }
-            const obj = data[index];
+            const obj = this.data[index];
             index++;
             console.log(index);
             return (
-                <div className="showListItem" key={rowID}>
-                <div className="headImg">
-                    
-                </div>
-                <div className="photoInfo">
-                    <div className="classNum">{obj.class_id}班</div>
-                    <div className="college">{obj.college}</div>
-                    <div className="major">{obj.major}</div>
-                    <div className="rankAndNice">                        
-                        <span className="nice">
-                            <img className="niceIcon" src={niceNumIcon}/>
-                            <span className="niceNum">111</span>
-                        </span>
-                        <span className="rank">
-                            <img className="rankIcon" src={rankIcon}/>
-                            <span className="rankNum">No.101</span>
-                        </span>
-                    </div>
-                </div>
-            </div>
+                <NewItem obj={obj} index={index} rowID={rowID}/>
                 );
         };
 

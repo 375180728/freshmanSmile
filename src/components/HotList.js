@@ -6,175 +6,22 @@ import { ListView } from 'antd-mobile';
 
 import '../styles/ShowList.css';
 
-import HotItem from './HotItem' 
-import banner from '../images/banner.png';
+import HotItem from './HotItem';
 
+import rankIcon from '../images/rankIcon.png';
+import niceNumIcon from '../images/niceNumIcon.png';
+import banner from '../images/banner.png';
 
 function MyBody(props) {
     return (
         <div className="bannerContainer my-body">
-            <img src={banner} className="banner"/>
-            {props.children}
+          <img src={banner} className="banner"/>
+          {props.children}
         </div>
-    );
+        );
 }
 
-const json = {
-    "status": 200,
-    "code": 1,
-    "data": [
-        {
-            "major": "测试专业",
-            "college": "测试学院",
-            "class_id": "test1",
-            "score": 219
-        },
-        {
-            "major": "通信工程",
-            "college": "通信学院",
-            "class_id": "01011603",
-            "score": 0
-        },
-        {
-            "major": "软件工程",
-            "college": "软件工程",
-            "class_id": "13001609",
-            "score": 0
-        },
-        {
-            "major": "软件工程",
-            "college": "软件工程",
-            "class_id": "13001609",
-            "score": 0
-        },
-        {
-            "major": "软件工程",
-            "college": "软件工程",
-            "class_id": "13001609",
-            "score": 0
-        },
-        {
-            "major": "软件工程",
-            "college": "软件工程",
-            "class_id": "13001609",
-            "score": 0
-        },
-        {
-            "major": "软件工程",
-            "college": "软件工程",
-            "class_id": "13001609",
-            "score": 0
-        },
-        {
-            "major": "软件工程",
-            "college": "软件工程",
-            "class_id": "13001609",
-            "score": 0
-        },
-        {
-            "major": "软件工程",
-            "college": "软件工程",
-            "class_id": "13001609",
-            "score": 0
-        },
-        {
-            "major": "软件工程",
-            "college": "软件工程",
-            "class_id": "13001609",
-            "score": 0
-        },
-        {
-            "major": "软件工程",
-            "college": "软件工程",
-            "class_id": "13001609",
-            "score": 0
-        },
-        {
-            "major": "软件工程",
-            "college": "软件工程",
-            "class_id": "13001609",
-            "score": 0
-        },
-        {
-            "major": "软件工程",
-            "college": "软件工程",
-            "class_id": "13001609",
-            "score": 0
-        },
-        {
-            "major": "软件工程",
-            "college": "软件工程",
-            "class_id": "13001609",
-            "score": 0
-        },
-        {
-            "major": "软件工程",
-            "college": "软件工程",
-            "class_id": "13001609",
-            "score": 0
-        },
-        {
-            "major": "软件工程",
-            "college": "软件工程",
-            "class_id": "13001609",
-            "score": 0
-        },
-        {
-            "major": "软件工程",
-            "college": "软件工程",
-            "class_id": "13001609",
-            "score": 0
-        },
-        {
-            "major": "软件工程",
-            "college": "软件工程",
-            "class_id": "13001609",
-            "score": 0
-        },
-        {
-            "major": "软件工程",
-            "college": "软件工程",
-            "class_id": "13001609",
-            "score": 0
-        },
-        {
-            "major": "软件工程",
-            "college": "软件工程",
-            "class_id": "13001609",
-            "score": 0
-        },
-    ],
-    "msg": "succeed"
-};
-
-const data = json.data;
-
-const NUM_SECTIONS = 4;
-const NUM_ROWS_PER_SECTION = 5;
-let pageIndex = 0;
-
-const dataBlobs = {};
-let sectionIDs = [];
-let rowIDs = [];
-function genData(pIndex = 0) {
-    for (let i = 0; i < NUM_SECTIONS; i++) {
-        const ii = (pIndex * NUM_SECTIONS) + i;
-        const sectionName = `Section ${ii}`;
-        sectionIDs.push(sectionName);
-        dataBlobs[sectionName] = sectionName;
-        rowIDs[ii] = [];
-
-        for (let jj = 0; jj < NUM_ROWS_PER_SECTION; jj++) {
-            const rowName = `S${ii}, R${jj}`;
-            rowIDs[ii].push(rowName);
-            dataBlobs[rowName] = rowName;
-        }
-    }
-    sectionIDs = [...sectionIDs];
-    rowIDs = [...rowIDs];
-}
-
-class HotList extends Component {
+class NewList extends Component {
     constructor(props) {
         super(props);
         const getSectionData = (dataBlob, sectionID) => dataBlob[sectionID];
@@ -193,31 +40,76 @@ class HotList extends Component {
             height: document.documentElement.clientHeight * 3 / 4,
         };
 
-    }
+        this.json = {
+            "status": 200,
+            "code": 1,
+            "data": [
+                {
+                    "major": "测试专业",
+                    "college": "测试学院",
+                    "class_id": "test1",
+                    "score": 219
+                },
+                {
+                    "major": "通信工程",
+                    "college": "通信学院",
+                    "class_id": "01011603",
+                    "score": 0
+                },
+                {
+                    "major": "软件工程",
+                    "college": "软件工程",
+                    "class_id": "13001609",
+                    "score": 0
+                }
+            ],
+            "msg": "succeed"
+        };
 
-    handleClick(){
-        // this.setState({
-        //     isLiked: !this.state.isLiked,
-        // })
-        // console.log(this.state)
+        this.data = this.json.data;
+        this.NUM_SECTIONS = 3;
+        this.NUM_ROWS_PER_SECTION = 4;
+        this.dataBlobs = {};
+        this.pageIndex = 0;
+        this.sectionIDs = [];
+        this.rowIDs = [];
     }
 
     componentDidMount() {
         // you can scroll to the specified position
-        // setTimeout(() => this.lv.scrollTo(0, 120), 800);
+        setTimeout(() => this.lv.scrollTo(0, 120), 800);
 
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
         // simulate initial Ajax
         setTimeout(() => {
-            genData();
+            this.genData();
             this.setState({
-                dataSource: this.state.dataSource.cloneWithRowsAndSections(dataBlobs, sectionIDs, rowIDs),
+                dataSource: this.state.dataSource.cloneWithRowsAndSections(this.dataBlobs, this.sectionIDs, this.rowIDs),
                 isLoading: false,
                 height: hei,
             });
-            console.log(this.state.DataSource);
         }, 600);
     }
+
+    genData(pIndex = 0) {
+        for (let i = 0; i < this.NUM_SECTIONS; i++) {
+            const ii = (pIndex * this.NUM_SECTIONS) + i;
+            const sectionName = `Section ${ii}`;
+            this.sectionIDs.push(sectionName);
+            this.dataBlobs[sectionName] = sectionName;
+            this.rowIDs[ii] = [];
+
+            for (let jj = 0; jj < this.NUM_ROWS_PER_SECTION; jj++) {
+                const rowName = `S${ii}, R${jj}`;
+                this.rowIDs[ii].push(rowName);
+                this.dataBlobs[rowName] = rowName;
+            }
+        }
+        this.sectionIDs = [...this.sectionIDs];
+        this.rowIDs = [...this.rowIDs];
+    }
+
+
 
     onEndReached = (event) => {
         // load new data
@@ -230,9 +122,9 @@ class HotList extends Component {
             isLoading: true
         });
         setTimeout(() => {
-            genData(++pageIndex);
+            this.genData(++this.pageIndex);
             this.setState({
-                dataSource: this.state.dataSource.cloneWithRowsAndSections(dataBlobs, sectionIDs, rowIDs),
+                dataSource: this.state.dataSource.cloneWithRowsAndSections(this.dataBlobs, this.sectionIDs, this.rowIDs),
                 isLoading: false,
             });
         }, 1000);
@@ -250,16 +142,16 @@ class HotList extends Component {
         );
         let index = 0;
         const row = (rowData, sectionID, rowID) => {
-            if (index > data.length - 1) {
+            if (index > this.data.length - 1) {
                 index = 0;
             }
-            const obj = data[index];
-            index ++;
-            console.log(rowID);
+            const obj = this.data[index];
+            index++;
+            console.log(index);
             return (
-                    <HotItem obj={obj} rowID={rowID} index={index}/>
-                )
-            }
+                <HotItem obj={obj} index={index} rowID={rowID}/>
+                );
+        };
 
         return (
             <ListView
@@ -272,7 +164,10 @@ class HotList extends Component {
                 height: this.state.height,
                 overflow: 'auto',
             }}
-            pageSize={12}
+            pageSize={10}
+            onScroll={() => {
+                console.log('scroll');
+            }}
             scrollRenderAheadDistance={500}
             onEndReached={this.onEndReached}
             onEndReachedThreshold={10}
@@ -281,4 +176,4 @@ class HotList extends Component {
     }
 }
 
-export default HotList;
+export default NewList;

@@ -5,19 +5,19 @@ import ReactDOM from 'react-dom';
 
 import '../styles/ShowList.css';
 
-import rankIcon from '../images/rankIcon.png';
+import clockIcon from '../images/clockIcon.png';
 import niceNumIcon from '../images/niceNumIcon.png';
 import banner from '../images/banner.png';
 
 
-class HotItem extends Component{
+class NewItem extends Component{
     constructor(props) {
         super(props)
         this.state = {
             isLiked: false,
             score: '',
         };
-        this.handleClick = this.handleClick.bind(this);
+        this.handleClick = this.handleClick.bind(this)
     }
 
     componentDidMount(){
@@ -30,6 +30,7 @@ class HotItem extends Component{
     }
 
     handleClick(){
+        console.log(1);
         this.setState({
             isLiked: !this.state.isLiked,
         },function(){
@@ -48,9 +49,9 @@ class HotItem extends Component{
 
     render(){
         const obj = this.props.obj;
-        console.log(obj)
         const rowID = this.props.rowID;
         const index = this.props.index;
+        const time = obj.date.slice(5,10)
 
         return(
             <div className="showListItem" key={rowID}>
@@ -61,15 +62,15 @@ class HotItem extends Component{
                     <div className="classNum">{obj.class_id}</div>
                     <div className="college">{obj.college}</div>
                     <div className="major">{obj.major}</div>
-                    <div className="rankAndNice">                        
+                    <div className="rankAndNice"> 
                         <span className="nice">
                             <img className="niceIcon" src={niceNumIcon} onClick={this.handleClick}/>
                             <span className="niceNum">{this.state.score}</span>
                         </span>
                         <span className="rank">
-                            <img className="rankIcon" src={rankIcon}/>
-                            <span className="rankNum">No.{index}</span>
-                        </span>
+                            <img className="rankIcon" src={clockIcon}/>
+                            <span className="rankNum">{time}</span>
+                        </span>                       
                     </div>
                 </div>
             </div>
@@ -78,4 +79,4 @@ class HotItem extends Component{
     }
 }
 
-export default HotItem;
+export default NewItem;
