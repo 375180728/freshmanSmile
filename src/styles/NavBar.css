@@ -1,3 +1,7 @@
 .am-tab-bar-tab-title{
     font-size: 0.386667rem !important;
 }
+
+.am-tab-bar-tab-icon{
+    margin-top: -0.333333rem;
+}

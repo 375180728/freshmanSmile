@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Item = () => (
+const Item = ({match}) => (
   <div>
-    <h3>123</h3>
+    <h3>{match.params.ItemId}</h3>
   </div>
 )
 

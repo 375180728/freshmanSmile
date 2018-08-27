@@ -38,18 +38,20 @@
 }
 
 .rankAndNice{
+    float: right; 
     margin-top: 0.203333rem;
     line-height: 0.366667rem;
+    width: 70%;
 }
 
-.nice,
-.rank{
-   float: right; 
+.nice{
+   float: left; 
 }
 
 .rank{
-    margin-right: 0.4rem;
+    float: right;
 }
+
 
 .niceIcon,
 .rankIcon{
@@ -60,4 +62,18 @@
 .niceNum,
 .rankNum{
     margin-left: 0.15rem;
+}
+
+.bannerContainer{
+    width: 100%;
+    height: 4.933333rem;
+}
+
+.banner{
+    width: 100%;
+    height: 100%;
+}
+
+.list-view-section-body{
+    margin-top: 0.333333rem;
 }

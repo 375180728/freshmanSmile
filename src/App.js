@@ -7,11 +7,6 @@ import About from './components/About';
 
 import NavBar from './components/NavBar';
 
-import shows from './images/shows.png';
-import mine from './images/mine.png';
-import takepic from './images/takePic.png';
-
-
 import './App.css';
 
 class App extends Component {
@@ -27,9 +22,6 @@ class App extends Component {
             </Router>
         )
     }
-
-
-
 }
 
 export default App

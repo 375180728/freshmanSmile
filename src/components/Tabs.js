@@ -1,8 +1,9 @@
-import { Tabs, WhiteSpace } from 'antd-mobile';
+import { Tabs } from 'antd-mobile';
 import { StickyContainer, Sticky } from 'react-sticky';
 import React from 'react';
 
-import ShowList from './ShowList'
+import NewList from './NewList'
+import HotList from './HotList'
 
 import banner from '../images/banner.png';
 import '../styles/Tabs.css';
@@ -46,18 +47,8 @@ const TabExample = () => (
     tabBarInactiveTextColor={'#404040'}
     swipeable={true}
     >
-                
-                <ShowList/>
-                
-                
-                <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#fff'
-    }}>
-                    Content of second tab
-                </div>
+                  <NewList/>
+                  <HotList/>
             </Tabs>
         </StickyContainer>
     </div>

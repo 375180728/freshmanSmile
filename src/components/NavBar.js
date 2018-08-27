@@ -12,8 +12,8 @@ import { TabBar } from 'antd-mobile';
 import '../styles/NavBar.css';
 
 
-class NavBar extends React.Component {
-    constructor(props) {
+class NavBar extends Component {
+    constructor(props) {  
         super(props);
         this.state = {
             selectedTab: 'blueTab',
@@ -42,6 +42,7 @@ class NavBar extends React.Component {
             icon={<div style={{
                 width: '0.7rem',
                 height: '0.6rem',
+                marginTop: '0.4rem',
                 background: 'url(' + shows + ') center center /  0.7rem 0.6rem no-repeat'
             }}
             />
@@ -49,6 +50,7 @@ class NavBar extends React.Component {
             selectedIcon={<div style={{
                 width: '0.7rem',
                 height: '0.6rem',
+                marginTop: '0.4rem',
                 background: 'url(' + selectedShows + ') center center /  0.7rem 0.6rem no-repeat'
             }}
             />
@@ -66,7 +68,7 @@ class NavBar extends React.Component {
           <TabBar.Item
             icon={
             <div style={{
-                marginTop: '-0.6rem',
+                marginTop: '-0.2rem',
                 width: '1.2rem',
                 height: '1.2rem',
                 zIndex: '100',
@@ -76,7 +78,7 @@ class NavBar extends React.Component {
             }
             selectedIcon={
             <div style={{
-                marginTop: '-0.6rem',
+                marginTop: '-0.2rem',
                 width: '1.2rem',
                 height: '1.2rem',
                 zIndex: '100',
@@ -101,6 +103,7 @@ class NavBar extends React.Component {
             <div style={{
                 width: '0.6rem',
                 height: '0.6rem',
+                marginTop: '0.4rem',
                 background: 'url(' + mine + ') center center /  0.6rem 0.6rem no-repeat'
             }}
             />
@@ -109,6 +112,7 @@ class NavBar extends React.Component {
             <div style={{
                 width: '0.6rem',
                 height: '0.6rem',
+                marginTop: '0.4rem',
                 background: 'url(' + selectedMine + ') center center /  0.6rem 0.6rem no-repeat'
             }}
             />

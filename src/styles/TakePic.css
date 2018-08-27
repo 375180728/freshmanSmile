@@ -20,6 +20,7 @@
 }
 
 .addPhoto{
+    position: relative;
     width: 8.146667rem;
     height: 5.56rem;
     margin: 0 auto;
@@ -29,13 +30,14 @@
 }
 
 .addIcon{
+    position: relative;
     width: 0.933333rem;
     height: 0.933333rem;
     margin: 0 auto;
     margin-top: 2.133333rem;
 }
 
-.addIcon img{
+.adds{
     width: 100%;
     height: 100%;
 }
@@ -89,10 +91,29 @@
     height: 1.2rem;
     width: 7.52rem;
     margin: 0 auto;
-    margin-top: 1.366667rem;
+    margin-top: 0.666667rem;
 }
 
 .uploadButton{
+    width: 100%;
+    height: 100%;
+}
+
+.addIcon input{
+    display: block;
+    position: absolute;
+    top: 0rem;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.preview{
+    position: absolute;
+    border-radius: 6px;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
 }

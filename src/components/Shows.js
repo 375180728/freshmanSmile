@@ -5,11 +5,12 @@ import Tabs from './Tabs';
 import NavBar from './NavBar'
 
 import Item from './Item';
-import ShowList from './ShowList';
+import NewList from './NewList';
 
 const Shows = ({match}) => (
     <div>
         <Tabs/>
+        
         <Route path={`${match.url}/:ItemId`} component={Item}/>
     </div>
 );
