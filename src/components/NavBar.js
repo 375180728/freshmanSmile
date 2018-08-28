@@ -13,7 +13,7 @@ import '../styles/NavBar.css';
 
 
 class NavBar extends Component {
-    constructor(props) {  
+    constructor(props) {
         super(props);
         this.state = {
             selectedTab: 'blueTab',
@@ -28,7 +28,7 @@ class NavBar extends Component {
                 width: '100%',
                 bottom: 0
             }}>
-        <TabBar
+            <TabBar
             unselectedTintColor="#bbbbbb"
             tintColor="#ff926b"
             barTintColor="#f9f9f9"
@@ -36,7 +36,7 @@ class NavBar extends Component {
             hidden={this.state.hidden}
             prerenderingSiblingsNumber={0}
             >
-          <TabBar.Item
+              <TabBar.Item
             title="风采展示"
             key="Shows"
             icon={<div style={{
@@ -64,8 +64,8 @@ class NavBar extends Component {
             }}
             data-seed="logId"
             >
-          </TabBar.Item>
-          <TabBar.Item
+              </TabBar.Item>
+              <TabBar.Item
             icon={
             <div style={{
                 marginTop: '-0.2rem',
@@ -97,8 +97,8 @@ class NavBar extends Component {
             }}
             data-seed="logId1"
             >
-          </TabBar.Item>
-          <TabBar.Item
+              </TabBar.Item>
+              <TabBar.Item
             icon={
             <div style={{
                 width: '0.6rem',
@@ -127,9 +127,9 @@ class NavBar extends Component {
                 });
             }}
             >
-          </TabBar.Item>
-        </TabBar>
-      </div>
+              </TabBar.Item>
+            </TabBar>
+            </div>
             );
     }
 }

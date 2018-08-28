@@ -20,7 +20,7 @@ class HotItem extends Component{
         this.handleClick = this.handleClick.bind(this);
     }
 
-    componentDidMount(){
+    componentWillMount(){
         console.log(this.props.obj.score)
         this.setState({
             score: this.props.obj.score,

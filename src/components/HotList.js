@@ -11,7 +11,7 @@ import HotItem from './HotItem';
 import rankIcon from '../images/rankIcon.png';
 import niceNumIcon from '../images/niceNumIcon.png';
 import banner from '../images/banner.png';
-
+ 
 function MyBody(props) {
     return (
         <div className="bannerContainer my-body">
@@ -77,7 +77,7 @@ class NewList extends Component {
 
     componentDidMount() {
         // you can scroll to the specified position
-        setTimeout(() => this.lv.scrollTo(0, 120), 800);
+        // setTimeout(() => this.lv.scrollTo(0, 1200), 800);
 
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
         // simulate initial Ajax

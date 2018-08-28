@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { ListView } from 'antd-mobile';
-
+import { Route }from 'react-router-dom'
 
 
 import '../styles/ShowList.css';
@@ -11,6 +11,7 @@ import niceNumIcon from '../images/niceNumIcon.png';
 import banner from '../images/banner.png';
 
 import NewItem from './NewItem'
+import Classes from './Classes'
 
 function MyBody(props) {
     return (
@@ -26,14 +27,13 @@ class NewList extends Component {
         super(props);
         const getSectionData = (dataBlob, sectionID) => dataBlob[sectionID];
         const getRowData = (dataBlob, sectionID, rowID) => dataBlob[rowID];
-
         const dataSource = new ListView.DataSource({
             getRowData,
             getSectionHeaderData: getSectionData,
             rowHasChanged: (row1, row2) => row1 !== row2,
             sectionHeaderHasChanged: (s1, s2) => s1 !== s2,
         });
-
+        this.match = this.props.match;
         this.state = {
             dataSource,
             isLoading: true,
@@ -79,7 +79,7 @@ class NewList extends Component {
 
     componentDidMount() {
         // you can scroll to the specified position
-        setTimeout(() => this.lv.scrollTo(0, 120), 800);
+        // setTimeout(() => this.lv.scrollTo(0, 120), 800);
 
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
         // simulate initial Ajax
@@ -149,9 +149,8 @@ class NewList extends Component {
             }
             const obj = this.data[index];
             index++;
-            console.log(index);
             return (
-                <NewItem obj={obj} index={index} rowID={rowID}/>
+                <NewItem obj={obj} index={index} rowID={rowID} match={this.match}/>
                 );
         };
 
