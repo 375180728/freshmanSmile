@@ -1,39 +1,30 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { ListView } from 'antd-mobile';
-import { Route }from 'react-router-dom'
+import { Route } from 'react-router-dom';
 
 
-import '../styles/ShowList.css';
+import '../styles/ClassList.css';
 
-import HotItem from './HotItem';
-
+import ClassItem from './ClassItem';
+import ClassHeader from './ClassHeader';
 import rankIcon from '../images/rankIcon.png';
 import niceNumIcon from '../images/niceNumIcon.png';
-import banner from '../images/banner.png';
- 
-function MyBody(props) {
-    return (
-        <div className="bannerContainer my-body">
-          <img src={banner} className="banner"/>
-          {props.children}
-        </div>
-        );
-}
+import loveIcon from '../images/loveIcon.png';
 
-class NewList extends Component {
+
+class ClassList extends Component {
     constructor(props) {
         super(props);
         const getSectionData = (dataBlob, sectionID) => dataBlob[sectionID];
         const getRowData = (dataBlob, sectionID, rowID) => dataBlob[rowID];
-
         const dataSource = new ListView.DataSource({
             getRowData,
             getSectionHeaderData: getSectionData,
             rowHasChanged: (row1, row2) => row1 !== row2,
             sectionHeaderHasChanged: (s1, s2) => s1 !== s2,
         });
-
+        this.match = this.props.match;
         this.state = {
             dataSource,
             isLoading: true,
@@ -43,30 +34,36 @@ class NewList extends Component {
         this.json = {
             "status": 200,
             "code": 1,
-            "data": [
-                {
-                    "major": "测试专业",
-                    "college": "测试学院",
-                    "class_id": "test1",
-                    "score": 219
-                },
-                {
-                    "major": "通信工程",
-                    "college": "通信学院",
-                    "class_id": "01011603",
-                    "score": 0
-                },
-                {
-                    "major": "软件工程",
+            "data": {
+                "stu_info": [
+                    {
+                        "nickname": "test笑脸网名",
+                        "descp": "test笑脸描述",
+                        "img_url": "https://wx.idsbllp.cn/orientation/images/test.jpg",
+                        "stu_id": "test01",
+                        "is_liked": true,
+                        "received_like": 20
+                    },
+                    {
+                        "nickname": "kjj的笑脸网名",
+                        "descp": "kjj的笑脸描述",
+                        "img_url": "https://wx.idsbllp.cn/orientation/images/niyaowoyizhixiaome.jpg",
+                        "stu_id": "2016214223",
+                        "is_liked": false,
+                        "received_like": 0
+                    }
+                ],
+                "class_info": {
                     "college": "软件工程",
+                    "major": "软件工程",
                     "class_id": "13001609",
-                    "score": 0
+                    "received_like": 100,
+                    "is_liked": false
                 }
-            ],
+            },
             "msg": "succeed"
         };
-        this.match = this.props.match;
-        this.data = this.json.data;
+        this.stu_data = this.json.data.stu_info;
         this.NUM_SECTIONS = 3;
         this.NUM_ROWS_PER_SECTION = 4;
         this.dataBlobs = {};
@@ -77,7 +74,7 @@ class NewList extends Component {
 
     componentDidMount() {
         // you can scroll to the specified position
-        // setTimeout(() => this.lv.scrollTo(0, 1200), 800);
+        // setTimeout(() => this.lv.scrollTo(0, 120), 800);
 
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
         // simulate initial Ajax
@@ -142,14 +139,13 @@ class NewList extends Component {
         );
         let index = 0;
         const row = (rowData, sectionID, rowID) => {
-            if (index > this.data.length - 1) {
+            if (index > this.stu_data.length - 1) {
                 index = 0;
             }
-            const obj = this.data[index];
+            const obj = this.stu_data[index];
             index++;
-            console.log(index);
             return (
-                <HotItem obj={obj} index={index} rowID={rowID} match={this.match}/>
+                <ClassItem obj={obj} index={index} rowID={rowID} match={this.match}/>
                 );
         };
 
@@ -157,13 +153,13 @@ class NewList extends Component {
             <ListView
             ref={el => this.lv = el}
             dataSource={this.state.dataSource}
-            renderBodyComponent={() => <MyBody />}
             renderRow={row}
             renderSeparator={separator}
             style={{
                 height: this.state.height,
                 overflow: 'auto',
             }}
+            renderHeader={() => <ClassHeader obj={this.json.data.class_info}/>}
             pageSize={10}
             onScroll={() => {
                 console.log('scroll');
@@ -176,4 +172,4 @@ class NewList extends Component {
     }
 }
 
-export default NewList;
+export default ClassList;

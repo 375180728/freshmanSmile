@@ -4,7 +4,7 @@ import { Route, Link } from 'react-router-dom';
 import Tabs from './Tabs';
 import NavBar from './NavBar'
 
-import NewList from './NewList';
+import ClassList from './ClassList';
 
 const Shows = ({match}) => (
     <div>

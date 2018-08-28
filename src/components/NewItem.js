@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import { Link, Route } from 'react-router-dom';
 import '../styles/ShowList.css';
 
-import Classes from './Classes';
 import clockIcon from '../images/clockIcon.png';
 import niceNumIcon from '../images/niceNumIcon.png';
 import banner from '../images/banner.png';
@@ -19,34 +18,6 @@ class NewItem extends Component {
             isLiked: false,
             score: '',
         };
-        this.handleClick = this.handleClick.bind(this);
-    }
-
-    componentWillMount() {
-        console.log(this.props.obj.score);
-        this.setState({
-            score: this.props.obj.score,
-        }, function() {
-            console.log(this.state.score);
-        });
-    }
-
-    handleClick() {
-        console.log(1);
-        this.setState({
-            isLiked: !this.state.isLiked,
-        }, function() {
-            console.log(this.state);
-            if (this.state.isLiked) {
-                this.setState({
-                    score: parseInt(this.state.score) + 1
-                });
-            } else {
-                this.setState({
-                    score: parseInt(this.state.score) - 1
-                });
-            }
-        });
     }
 
     render() {
@@ -66,8 +37,8 @@ class NewItem extends Component {
                         <div className="major">{obj.major}</div>
                         <div className="rankAndNice"> 
                             <span className="nice">
-                                <img className="niceIcon" src={niceNumIcon} onClick={this.handleClick}/>
-                                <span className="niceNum">{this.state.score}</span>
+                                <img className="niceIcon" src={niceNumIcon}/>
+                                <span className="niceNum">{obj.score}</span>
                             </span> 
                             <span className="rank">
                                 <img className="rankIcon" src={clockIcon}/>
@@ -76,7 +47,6 @@ class NewItem extends Component {
                         </div>
                     </div>
                 </Link>
-                <Route path={`${match.url}/:ClassId`} component={Classes} />            
             </div>
         );
     }

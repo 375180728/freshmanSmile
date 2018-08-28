@@ -11,7 +11,7 @@ import niceNumIcon from '../images/niceNumIcon.png';
 import banner from '../images/banner.png';
 
 import NewItem from './NewItem'
-import Classes from './Classes'
+import ClassList from './ClassList'
 
 function MyBody(props) {
     return (
@@ -150,7 +150,9 @@ class NewList extends Component {
             const obj = this.data[index];
             index++;
             return (
-                <NewItem obj={obj} index={index} rowID={rowID} match={this.match}/>
+                <div>
+                    <NewItem obj={obj} index={index} rowID={rowID} match={this.match}/>
+                </div>
                 );
         };
 
