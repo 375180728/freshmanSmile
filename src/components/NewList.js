@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { ListView } from 'antd-mobile';
-import { Route }from 'react-router-dom'
+import { Route } from 'react-router-dom';
 
+import axios from 'axios';
 
 import '../styles/ShowList.css';
+
 
 import rankIcon from '../images/rankIcon.png';
 import niceNumIcon from '../images/niceNumIcon.png';
 import banner from '../images/banner.png';
 
-import NewItem from './NewItem'
-import ClassList from './ClassList'
+import NewItem from './NewItem';
+import ClassList from './ClassList';
 
 function MyBody(props) {
     return (
@@ -19,7 +21,7 @@ function MyBody(props) {
           <img src={banner} className="banner"/>
           {props.children}
         </div>
-    );
+        );
 }
 
 class NewList extends Component {
@@ -78,8 +80,19 @@ class NewList extends Component {
     }
 
     componentDidMount() {
-        // you can scroll to the specified position
-        // setTimeout(() => this.lv.scrollTo(0, 120), 800);
+
+        axios({
+            method: 'get',
+            url: 'https://wx.redrock.team/orientation-plus/class/list',
+            data: {
+                type: 'latest'
+            },
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            }
+        }).then(function(res) {
+            return res.data;
+        });
 
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
         // simulate initial Ajax
@@ -111,7 +124,7 @@ class NewList extends Component {
         this.rowIDs = [...this.rowIDs];
     }
 
-    
+
 
     onEndReached = (event) => {
         // load new data
