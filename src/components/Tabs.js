@@ -4,6 +4,10 @@ import { StickyContainer, Sticky } from 'react-sticky';
 
 import NewList from './NewList';
 import HotList from './HotList';
+import ClassList from './ClassList';
+
+
+import { Route } from 'react-router-dom'
 
 import banner from '../images/banner.png';
 import '../styles/Tabs.css';

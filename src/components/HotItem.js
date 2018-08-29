@@ -14,10 +14,6 @@ class HotItem extends Component{
     constructor(props) {
         super(props)
         this.match = this.props.match;
-        this.state = {
-            isLiked: false,
-            score: '',
-        };
     }
 
     render(){

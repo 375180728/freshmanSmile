@@ -150,7 +150,7 @@ class NewList extends Component {
             console.log(index);
             return (
                 <HotItem obj={obj} index={index} rowID={rowID} match={this.match}/>
-                );
+            );
         };
 
         return (

@@ -13,11 +13,6 @@ class NewItem extends Component {
     constructor(props) {
         super(props);
         this.match = this.props.match;
-        console.log(this.match);
-        this.state = {
-            isLiked: false,
-            score: '',
-        };
     }
 
     render() {

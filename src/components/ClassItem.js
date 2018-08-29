@@ -17,8 +17,6 @@ class NewItem extends Component {
         console.log(this.match);
     }
 
-    
-
     render() {
         const obj = this.props.obj;
         const rowID = this.props.rowID;

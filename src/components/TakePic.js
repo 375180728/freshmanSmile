@@ -4,6 +4,9 @@ import '../styles/TakePic.css';
 
 import upload from '../images/upload.png';
 import addIcon from '../images/addIcon.png';
+import cameraIcon from '../images/cameraIcon.png';
+import nickNameIcon from '../images/nickNameIcon.png';
+import decIcon from '../images/decIcon.png';
 
 
 function AddedPhoto(props) {
@@ -104,15 +107,30 @@ class TakePic extends Component {
             return (
             <div className="showContainer">
                 <div className="showOneShow">
-                    <div className="showTitle">晒一晒</div>
+                    <div className="showTitle">
+                        <span className="cameraIcon" >
+                            <img src={cameraIcon}/>
+                        </span>
+                        <span className="titleWord">晒一晒</span>
+                    </div>
                     {addIcon}
                     <div className="nickName">
-                        <span>昵称</span>
-                        <input className="nickNameWord" type="text" placeholder="（限5字以内）" onChange={this.handleInputChange} value={this.state.nickName}/>
+                        <div>
+                            <span className="nickNameIcon">
+                                <img src={nickNameIcon}/>
+                            </span>
+                            <span className="nickNameText">昵称</span>
+                        </div>
+                        <input className="nickNameWord" type="text" placeholder="限5字内" onChange={this.handleInputChange} value={this.state.nickName}/>
                     </div>
                     <div className="description">
-                        <span>简介</span>
-                        <textarea className="descriptionWord" type="text" placeholder="（限20字以内）" onChange={this.handleTextChange} value={this.state.description}>
+                        <div>
+                            <span className="decIcon">
+                                <img src={decIcon}/>
+                            </span>
+                            <span className="decText">宣言</span>
+                        </div>
+                        <textarea className="descriptionWord" type="text" placeholder="限20字以内" onChange={this.handleTextChange} value={this.state.description}>
                         </textarea>
                     </div>
                 </div>

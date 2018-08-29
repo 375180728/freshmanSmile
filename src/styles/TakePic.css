@@ -14,6 +14,8 @@
 }
 
 .showTitle{
+    width: 90%;
+    height: 0.4rem;
     font-size: 0.366667rem;
     margin-left: 0.4rem;
     padding-top: 0.4rem;
@@ -21,7 +23,7 @@
 
 .addPhoto{
     position: relative;
-    width: 8.146667rem;
+    width: 90%;
     height: 5.56rem;
     margin: 0 auto;
     border: 2px dashed #d9d9d9;
@@ -54,8 +56,9 @@
 
 .nickName,
 .description{
+    width: 90%;
+    margin: 0 auto;
     margin-top: 0.4rem; 
-    margin-left: 0.4rem;
     font-size: 0.366667rem;
 }
 
@@ -69,22 +72,27 @@
 }
 
 .nickNameWord{
-    padding-left: 0.333333rem;
-    margin-left: 0.2rem;
+    width: 96%;
+    height: 0.733333rem;
+    padding-left: 4%;
     background-color: transparent;
-    border: 0;
+    margin-top: 0.293333rem;
+    border: 2px dashed #d9d9d9;
+    border-radius: 3px;
 }
 
 .descriptionWord{
-    height: 3.066667rem;
-    width: 80%;
-    margin-left: 1.22rem;
-    padding-top: 0.05rem;
+    height: 0.833333rem;
+    width: 96%;
+    line-height: 0.833333rem;
     background-color: transparent;
-    font-size: 0.366667rem;
-    border: 0;
+    padding-left: 4%;
+    margin-top: 0.693333rem;
+    border: 2px dashed #d9d9d9;
+    border-radius: 3px;
     color: #787878;
     resize: none;
+    font-size: 0.366667rem;
 }
 
 .upload{
@@ -116,4 +124,24 @@
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.cameraIcon img{
+    width: 0.433333rem;
+    height: 0.363333rem;
+}
+
+.nickNameIcon img,
+.decIcon img{
+    width: 0.343333rem;
+    height: 0.393333rem;
+}
+
+.titleWord,
+.nickNameText{
+    margin-left: 0.233333rem;
+}
+
+.decText{
+    margin-left: 0.58rem;
 }
