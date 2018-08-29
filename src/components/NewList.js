@@ -40,6 +40,7 @@ class NewList extends Component {
             dataSource,
             isLoading: true,
             height: document.documentElement.clientHeight * 3 / 4,
+            data: {},
         };
 
         this.json = {
@@ -70,6 +71,7 @@ class NewList extends Component {
             ],
             "msg": "succeed"
         };
+
         this.data = this.json.data;
         this.NUM_SECTIONS = 3;
         this.NUM_ROWS_PER_SECTION = 4;
@@ -90,7 +92,10 @@ class NewList extends Component {
                 'Content-Type': 'application/x-www-form-urlencoded',
             }
         }).then(function(res) {
-            return res.data;
+            console.log(res.data)
+            this.setState({
+                data: res.data.data 
+            }) 
         });
 
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;

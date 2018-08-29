@@ -6,7 +6,7 @@ import { Link, Route } from 'react-router-dom';
 import '../styles/ShowList.css';
 
 import rankIcon from '../images/rankIcon.png';
-import niceNumIcon from '../images/niceNumIcon.png';
+import scoreIcon from '../images/scoreIcon.png';
 import banner from '../images/banner.png';
 
 
@@ -34,7 +34,7 @@ class HotItem extends Component{
                         <div className="major">{obj.major}</div>
                         <div className="rankAndNice">                        
                             <span className="nice">
-                                <img className="niceIcon" src={niceNumIcon}/>
+                                <img className="niceIcon" src={scoreIcon}/>
                                 <span className="niceNum">{obj.score}</span>
                             </span>
                             <span className="rank">

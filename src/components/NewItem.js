@@ -7,7 +7,7 @@ import '../styles/ShowList.css';
 import ClassList from './ClassList'
 
 import clockIcon from '../images/clockIcon.png';
-import niceNumIcon from '../images/niceNumIcon.png';
+import scoreIcon from '../images/scoreIcon.png';
 import banner from '../images/banner.png';
 
 
@@ -34,7 +34,7 @@ class NewItem extends Component {
                         <div className="major">{obj.major}</div>
                         <div className="rankAndNice"> 
                             <span className="nice">
-                                <img className="niceIcon" src={niceNumIcon}/>
+                                <img className="niceIcon" src={scoreIcon}/>
                                 <span className="niceNum">{obj.score}</span>
                             </span> 
                             <span className="rank">

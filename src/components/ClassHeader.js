@@ -54,7 +54,7 @@ class ClassHeader extends Component {
 
                 <div className="secondRow">
                     <span className="secondRowLeft">光电学院</span>
-                    <span className="place">1200</span>
+                    <span className="place"></span>
                     <span className="secondRowRight">
                         <img src={rankIcon}/>
                     </span>
