@@ -1,0 +1,30 @@
+.oldContainer{
+    margin-top: 3.633333rem;
+}
+
+.smileIcon{
+    width: 4.64rem;
+    height: 4.64rem;
+    margin: 0 auto;
+}
+
+.smileIcon img{
+    width: 100%;
+    height: 100%;
+}
+
+.sug{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 0.666667rem;
+    font-size: 14px;
+}
+
+.sugFirst{
+    text-align: center;
+}
+
+.sugSecond{
+    text-align: center;
+    margin-top: 0.266667rem;
+}

@@ -12,7 +12,9 @@ class ClassHeader extends Component {
         this.state = {
             is_liked: false,
             received_like: '',
+            classId: this.props.match.params.classId,
         };
+        console.log(this.state)
 
     }
 

@@ -24,7 +24,9 @@ class ClassList extends Component {
             rowHasChanged: (row1, row2) => row1 !== row2,
             sectionHeaderHasChanged: (s1, s2) => s1 !== s2,
         });
+
         this.match = this.props.match;
+
         this.state = {
             dataSource,
             isLoading: true,
@@ -159,7 +161,7 @@ class ClassList extends Component {
                 height: this.state.height,
                 overflow: 'auto',
             }}
-            renderHeader={() => <ClassHeader obj={this.json.data.class_info}/>}
+            renderHeader={() => <ClassHeader obj={this.json.data.class_info} match={this.match}/>}
             pageSize={10}
             onScroll={() => {
                 console.log('scroll');

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import '../styles/OldTakePic.css';
 import smileIcon from '../images/smileIcon.png';
 
+import '../styles/OldTakePic.css'
+
 
 class OldTakePic extends Component{
     render(){
