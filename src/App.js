@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route, Link, Redirect } from 'react-router-dom';
 
 import Shows from './components/Shows';
 import TakePic from './components/TakePic';
@@ -16,6 +16,7 @@ class App extends Component {
         return (
             <Router>
                 <div className="container">
+                    <Redirect path="/" to={{pathname: '/shows'}} />
                     <Route exact path="/shows" component={Tabs}/>
                     <Route exact path="/takepic" component={TakePic}/>    
                     <Route exact path="/about" component={About}/>

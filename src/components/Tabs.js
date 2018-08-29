@@ -31,7 +31,7 @@ class TabExample extends Component {
                 title: '最新'
             },
             {
-            title: '最热'
+                title: '最热'
             },
         ];
     }

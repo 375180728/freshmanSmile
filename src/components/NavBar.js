@@ -19,8 +19,7 @@ class NavBar extends Component {
             selectedTab: 'blueTab',
             hidden: false,
         };
-
-        this.classId = 11;
+    
     }
     render() {
         return (

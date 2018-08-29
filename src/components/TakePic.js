@@ -38,7 +38,6 @@ class TakePic extends Component {
             description: '',
             image: '',
             isAdded: false,
-            isLiked: false,
         }
         this.handleClick = this.handleClick.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
