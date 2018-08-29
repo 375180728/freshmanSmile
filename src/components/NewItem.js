@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import { Link, Route } from 'react-router-dom';
 import '../styles/ShowList.css';
 
+import ClassList from './ClassList'
+
 import clockIcon from '../images/clockIcon.png';
 import niceNumIcon from '../images/niceNumIcon.png';
 import banner from '../images/banner.png';

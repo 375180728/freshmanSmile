@@ -19,6 +19,8 @@ class NavBar extends Component {
             selectedTab: 'blueTab',
             hidden: false,
         };
+
+        this.classId = 11;
     }
     render() {
         return (
@@ -121,7 +123,8 @@ class NavBar extends Component {
             key="mine"
             selected={this.state.selectedTab === 'greenTab'}
             onPress={() => {
-                this.props.history.push("/about");
+                const url = '/shows/' + this.classId; 
+                this.props.history.push(url);
                 this.setState({
                     selectedTab: 'greenTab',
                 });

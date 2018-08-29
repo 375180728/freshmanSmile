@@ -80,7 +80,6 @@ class NewList extends Component {
     }
 
     componentDidMount() {
-
         axios({
             method: 'get',
             url: 'https://wx.redrock.team/orientation-plus/class/list',

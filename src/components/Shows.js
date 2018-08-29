@@ -9,6 +9,8 @@ import ClassList from './ClassList';
 const Shows = ({match}) => (
     <div>
         <Tabs match={match}/>
+        <Route path={`${match.url}/:ClassId`} component={ClassList} />
+
     </div>
 );
 

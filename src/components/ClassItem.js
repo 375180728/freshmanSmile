@@ -10,7 +10,7 @@ import niceNumIcon from '../images/niceNumIcon.png';
 import banner from '../images/banner.png';
 
 
-class NewItem extends Component {
+class ClassItem extends Component {
     constructor(props) {
         super(props);
         this.match = this.props.match;
@@ -36,4 +36,4 @@ class NewItem extends Component {
     }
 }
 
-export default NewItem;
+export default ClassItem;

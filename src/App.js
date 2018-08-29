@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 import Shows from './components/Shows';
 import TakePic from './components/TakePic';
 import About from './components/About';
 import Tabs from './components/Tabs';
+import ClassList from './components/ClassList';
 
 import NavBar from './components/NavBar';
 
@@ -15,9 +16,10 @@ class App extends Component {
         return (
             <Router>
                 <div className="container">
-                    <Route path="/shows" component={Tabs}/>
-                    <Route path="/takepic" component={TakePic}/>    
-                    <Route path="/about" component={About}/>
+                    <Route exact path="/shows" component={Tabs}/>
+                    <Route exact path="/takepic" component={TakePic}/>    
+                    <Route exact path="/about" component={About}/>
+                    <Route path={`/shows/:classId`} component={ClassList} />
                     <NavBar/>
                 </div>
             </Router>
