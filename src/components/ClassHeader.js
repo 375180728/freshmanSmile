@@ -17,8 +17,7 @@ class ClassHeader extends Component {
             received_like: '',
             classId: this.props.match.params.classId,
         };
-        console.log(this.state);
-
+        console.log(this.props.obj);
     }
 
     componentWillMount() {
