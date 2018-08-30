@@ -25,47 +25,16 @@ class ClassList extends Component {
             sectionHeaderHasChanged: (s1, s2) => s1 !== s2,
         });
 
-        this.match = this.props.match;
 
         this.state = {
             dataSource,
             isLoading: true,
             height: document.documentElement.clientHeight * 3 / 4,
+            data: []
         };
 
-        this.json = {
-            "status": 200,
-            "code": 1,
-            "data": {
-                "stu_info": [
-                    {
-                        "nickname": "test笑脸网名",
-                        "descp": "test笑脸描述",
-                        "img_url": "https://wx.idsbllp.cn/orientation/images/test.jpg",
-                        "stu_id": "test01",
-                        "is_liked": true,
-                        "received_like": 20
-                    },
-                    {
-                        "nickname": "kjj的笑脸网名",
-                        "descp": "kjj的笑脸描述",
-                        "img_url": "https://wx.idsbllp.cn/orientation/images/niyaowoyizhixiaome.jpg",
-                        "stu_id": "2016214223",
-                        "is_liked": false,
-                        "received_like": 0
-                    }
-                ],
-                "class_info": {
-                    "college": "软件工程",
-                    "major": "软件工程",
-                    "class_id": "13001609",
-                    "received_like": 100,
-                    "is_liked": false
-                }
-            },
-            "msg": "succeed"
-        };
-        this.stu_data = this.json.data.stu_info;
+        
+        this.match = this.props.match;
         this.NUM_SECTIONS = 3;
         this.NUM_ROWS_PER_SECTION = 4;
         this.dataBlobs = {};
@@ -75,9 +44,17 @@ class ClassList extends Component {
     }
 
     componentDidMount() {
-        // you can scroll to the specified position
-        // setTimeout(() => this.lv.scrollTo(0, 120), 800);
-        
+        var that = this;
+        axios({
+            method: 'get',
+            url: 'https://wx.redrock.team/orientation-plus/class/list/info?class_id='+ {this.match.url.prams.classId},
+        }).then(function(res) {
+            console.log(res.data)
+            that.setState({
+                data: res.data.data 
+            }) 
+        });
+        this.data = this.state.data.stu_info;
 
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
         // simulate initial Ajax
@@ -145,7 +122,7 @@ class ClassList extends Component {
             if (index > this.stu_data.length - 1) {
                 index = 0;
             }
-            const obj = this.stu_data[index];
+            const obj = this.state.stu_data[index];
             index++;
             return (
                 <ClassItem obj={obj} index={index} rowID={rowID} match={this.match}/>

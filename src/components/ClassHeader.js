@@ -68,10 +68,11 @@ class ClassHeader extends Component {
     render() {
         let lovesIcon = null
         const is_liked = this.is_liked;
+        const click = this.handleClick
         if(is_liked){
-            lovesIcon = <img src={loveIcon} onClick={this.handleClick}/>
+            lovesIcon = <img src={loveIcon} onClick={click}/>
         }else{
-            lovesIcon = <img src={noLoveIcon} onClick={this.handleClick}/>
+            lovesIcon = <img src={noLoveIcon} onClick={click}/>
         }
         return (
             <div>
