@@ -23,7 +23,7 @@ class NavBar extends Component {
         };
     }
 
-    componentDidMount(){
+    componentWillMount(){
         this.setState({
             classId: this.props.classId,
             stuId: this.props.stuId,
