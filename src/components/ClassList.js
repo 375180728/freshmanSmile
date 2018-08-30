@@ -50,7 +50,7 @@ class ClassList extends Component {
             method: 'get',
             url: 'https://wx.redrock.team/orientation-plus/class/list/info',
             params: {
-                class_id: this.match.url.params.classId,
+                class_id: this.match.params.classId,
             }
         }).then(function(res) {
             that.setState({
