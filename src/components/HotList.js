@@ -147,7 +147,6 @@ class NewList extends Component {
             }
             const obj = this.data[index];
             index++;
-            console.log(index);
             return (
                 <HotItem obj={obj} index={index} rowID={rowID} match={this.match}/>
             );

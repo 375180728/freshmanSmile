@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 import '../styles/TakePic.css';
 
@@ -46,7 +47,21 @@ class TakePic extends Component {
     }
 
     handleClick(){
-        
+        // axios({
+        //     method: 'get',
+        //     url: 'https://wx.redrock.team/orientation-plus/class/list',
+        //     data: {
+        //         type: 'latest'
+        //     },
+        //     headers: {
+        //         'Content-Type': 'application/x-www-form-urlencoded',
+        //     }
+        // }).then(function(res) {
+        //     console.log(res.data)
+        //     this.setState({
+        //         data: res.data.data 
+        //     }) 
+        // });
     }
 
     handleInputChange(event){

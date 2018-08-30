@@ -18,7 +18,6 @@ class HotItem extends Component{
 
     render(){
         const obj = this.props.obj;
-        console.log(obj)
         const rowID = this.props.rowID;
         const index = this.props.index;
         const match = this.match;

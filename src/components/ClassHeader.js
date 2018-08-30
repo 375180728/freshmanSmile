@@ -5,16 +5,18 @@ import niceNumIcon from '../images/niceNumIcon.png';
 import loveIcon from '../images/loveIcon.png';
 import '../styles/ClassList.css';
 
+import axios from 'axios';
+
 class ClassHeader extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.handleClick = this.handleClick.bind(this);
         this.state = {
             is_liked: false,
             received_like: '',
             classId: this.props.match.params.classId,
         };
-        console.log(this.state)
+        console.log(this.state);
 
     }
 
@@ -30,21 +32,46 @@ class ClassHeader extends Component {
         this.setState({
             is_liked: !this.state.is_liked,
         }, function() {
-            console.log(this.state);
             if (this.state.is_liked) {
                 this.setState({
                     received_like: parseInt(this.state.received_like) + 1
+                }, function() {
+                    axios({
+                        method: 'post',
+                        url: 'https://wx.redrock.team/orientation-plus/class/like',
+                        data: {
+                            class_id: this.state.classId
+                        },
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        }
+                    }).then(function(res) {
+                        console.log(res.data);
+                    });
                 });
             } else {
                 this.setState({
                     received_like: parseInt(this.state.received_like) - 1
+                }, function() {
+                    axios({
+                        method: 'post',
+                        url: 'https://wx.redrock.team/orientation-plus/class/cancel_like',
+                        data: {
+                            class_id: this.state.classId
+                        },
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        }
+                    }).then(function(res) {
+                        console.log(res.data);
+                    });
                 });
             }
         });
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div>
                 <div className="firstRow">
                     <span className="firstRowLeft">光电学院</span>
@@ -62,7 +89,7 @@ class ClassHeader extends Component {
                     </span>
                 </div>
             </div>
-        )
+            );
     }
 }
 
