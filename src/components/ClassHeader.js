@@ -56,7 +56,7 @@ class ClassHeader extends Component {
                     axios({
                         method: 'post',
                         url: 'https://wx.redrock.team/orientation-plus/class/like',
-                        data: {
+                        params: {
                             class_id: this.state.classId
                         }
                     }).then(function(res) {
@@ -70,7 +70,7 @@ class ClassHeader extends Component {
                     axios({
                         method: 'post',
                         url: 'https://wx.redrock.team/orientation-plus/class/cancel_like',
-                        data: {
+                        params: {
                             class_id: this.state.classId
                         }
                     }).then(function(res) {
