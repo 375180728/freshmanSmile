@@ -17,10 +17,14 @@ class HotItem extends Component{
     }
 
     render(){
+        if(!obj){
+            return (<div></div>)
+        }
         const obj = this.props.obj;
         const rowID = this.props.rowID;
         const index = this.props.index;
         const match = this.match;
+        console.log(obj)
         return(
             <div className="showListItem" key={rowID}>
                 <Link to={`${match.url}/` + `${obj.class_id}`}>

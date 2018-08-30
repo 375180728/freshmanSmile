@@ -29,6 +29,7 @@ class ClassHeader extends Component {
     }
 
     handleClick() {
+        console.log('nice')
         this.setState({
             is_liked: !this.state.is_liked,
         }, function() {
@@ -67,7 +68,7 @@ class ClassHeader extends Component {
     render() {
         let lovesIcon = null
         const is_liked = this.is_liked;
-        const click = this.handleClick
+        const click = this.handleClick;
         if(is_liked){
             lovesIcon = <img src={loveIcon} onClick={click}/>
         }else{
@@ -80,7 +81,7 @@ class ClassHeader extends Component {
                     <span className="firstRowRight">
                         {lovesIcon}
                         <span className="loveNum">{this.state.received_like}</span>
-                        <span className="place"></span>
+                        <span className="place">10</span>
                         <img src={rankIcon}/>
                     </span>
                 </div>
