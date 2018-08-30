@@ -126,6 +126,7 @@ class ClassList extends Component {
                 index = 0;
             }
             const obj = this.state.stu_data[index];
+            console.log(this.state.data.class_info)
             index++;
             return (
                 <ClassItem obj={obj} index={index} rowID={rowID} match={this.match}/>
@@ -142,7 +143,7 @@ class ClassList extends Component {
                 height: this.state.height,
                 overflow: 'auto',
             }}
-            renderHeader={() => <ClassHeader obj={this.json.data.class_info} match={this.match}/>}
+            renderHeader={() => <ClassHeader obj={this.state.data.class_info} match={this.match}/>}
             pageSize={10}
             onScroll={() => {
                 console.log('scroll');
