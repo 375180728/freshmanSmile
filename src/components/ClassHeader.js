@@ -27,9 +27,9 @@ class ClassHeader extends Component {
         this.handleClick = this.handleClick.bind(this);
 
         this.state = {
-            is_liked: false,
+            is_liked: '',
             received_like: '',
-            classId: this.props.match.params.classId,
+            classId: '',
         };
         console.log(this.props.obj);
     }
@@ -37,8 +37,10 @@ class ClassHeader extends Component {
     componentDidMount() {
         this.setState({
             received_like: this.props.obj.received_like,
+            is_liked: this.props.obj.is_liked,
+            classId: this.props.obj.class_id,
         }, function() {
-            console.log(this.state.received_like);
+            console.log(this.state);
         });
     }
 
@@ -92,7 +94,7 @@ class ClassHeader extends Component {
         return (
             <div>
                 <div className="firstRow">
-                    <span className="firstRowLeft">光电学院</span>
+                    <span className="firstRowLeft" onClick={this.handleClick}>光电学院</span>
                     <span className="firstRowRight">
                         {lovesIcon}
                         <span className="loveNum">{this.state.received_like}</span>
