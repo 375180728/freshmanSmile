@@ -62,7 +62,7 @@ class NewList extends Component {
                 data: res.data.data 
             }) 
         });
-        this.data = this.state.data;
+        this.data = that.state.data;
         console.log(this.data)
     }
 

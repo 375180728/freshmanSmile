@@ -50,7 +50,7 @@ class App extends Component {
                 data: res.data.data,
             }, function() {
                 console.log(this.state);
-                this.stuId = this.state.data.stu_info.stuId.substring(0, 4);
+                this.stuId = that.state.data.stu_info.stuId.substring(0, 4);
                 if (this.stuId == 2018) {
                     that.setState({
                         isFreshman: true,
@@ -58,7 +58,7 @@ class App extends Component {
                         console.log(this.state);
                     });
                 } else {
-                    this.setState({
+                    that.setState({
                         isFreshman: false,
                     }, function() {
                         console.log(this.state);
@@ -71,6 +71,7 @@ class App extends Component {
 
 
     render() {
+        console.log(this.state)
         let isFreshman = this.state.isFreshman;
         let classId = this.state.data.stu_info.class_id;
         let stuId = this.state.data.stu_info.stuId;
