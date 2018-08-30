@@ -53,7 +53,7 @@ class App extends Component {
 
 
     render() {
-        console.log(this.state)
+        console.log(this.state.data == {})
 
         if(this.state.data == {}){
             return (<div></div>)
