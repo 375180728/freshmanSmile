@@ -19,37 +19,20 @@ class App extends Component {
         super(props);
         this.state = {
             data: {},
+            isFreshman: true,
     }
 
     componentDidMount() {
-        const that = this;
         axios({
             method: 'get',
             url: 'https://wx.redrock.team/orientation-plus/indv/info',
-        }).then(function(res) {
-            that.setState({
+        }).then(function(res){
+            this.setState({
                 data: res.data.data,
-            }, function() {
-                console.log(this.state);
-                this.stuId = that.state.data.stu_info.stuId.substring(0, 4);
-                if (this.stuId == 2018) {
-                    that.setState({
-                        isFreshman: true,
-                    }, function() {
-                        console.log(this.state);
-                    });
-                } else {
-                    that.setState({
-                        isFreshman: false,
-                    }, function() {
-                        console.log(this.state);
-                    });
-                }
-            });
-        });
-        console.log(this.state);
-
-    }
+            },function(){
+                console.log(this.state)
+            })
+        }).bind(this)
 
 
     render() {
