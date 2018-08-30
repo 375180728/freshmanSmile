@@ -84,13 +84,7 @@ class NewList extends Component {
     componentDidMount() {
         axios({
             method: 'get',
-            url: 'https://wx.redrock.team/orientation-plus/class/list',
-            data: {
-                type: 'latest'
-            },
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            }
+            url: 'https://wx.redrock.team/orientation-plus/class/list?type=latest',
         }).then(function(res) {
             console.log(res.data)
             this.setState({

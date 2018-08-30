@@ -8,6 +8,7 @@ import addIcon from '../images/addIcon.png';
 import cameraIcon from '../images/cameraIcon.png';
 import nickNameIcon from '../images/nickNameIcon.png';
 import decIcon from '../images/decIcon.png';
+import Cropper from 'react-cropper';
 
 
 function AddedPhoto(props) {
@@ -44,24 +45,23 @@ class TakePic extends Component {
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleTextChange = this.handleTextChange.bind(this);
         this.handleFileChange = this.handleFileChange.bind(this);
-    }
+    }   
 
     handleClick(){
-        // axios({
-        //     method: 'get',
-        //     url: 'https://wx.redrock.team/orientation-plus/class/list',
-        //     data: {
-        //         type: 'latest'
-        //     },
-        //     headers: {
-        //         'Content-Type': 'application/x-www-form-urlencoded',
-        //     }
-        // }).then(function(res) {
-        //     console.log(res.data)
-        //     this.setState({
-        //         data: res.data.data 
-        //     }) 
-        // });
+        axios({
+            method: 'post',
+            url: 'https://wx.redrock.team/orientation-plus/indv/upload',
+            params: {
+                nickname: this.state.nickName,
+                desp: this.state.description,
+                image: this.state.image,
+            },
+            body: {
+                'Content-Type': 'multipart/form-data',
+            }
+        }).then(function(res) {
+            console.log(res.data)
+        });
     }
 
     handleInputChange(event){

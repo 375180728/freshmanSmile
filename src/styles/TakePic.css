@@ -5,6 +5,7 @@
 }
 
 .showOneShow{
+    position: relative;
     width: 90%;
     height: 11.52rem;
     margin: 0 auto;
@@ -144,4 +145,11 @@
 
 .decText{
     margin-left: 0.58rem;
+}
+
+.company-logo-cropper{
+    position: absolute;
+    top: 0;
+    height: 0;
+    z-index: -100;
 }
