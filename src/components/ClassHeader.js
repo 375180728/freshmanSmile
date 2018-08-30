@@ -3,6 +3,7 @@ import banner from '../images/banner.png';
 import rankIcon from '../images/rankIcon.png';
 import niceNumIcon from '../images/niceNumIcon.png';
 import loveIcon from '../images/loveIcon.png';
+import noLoveIcon from '../images/noLoveIcon.png';
 import '../styles/ClassList.css';
 
 import axios from 'axios';
@@ -41,9 +42,6 @@ class ClassHeader extends Component {
                         url: 'https://wx.redrock.team/orientation-plus/class/like',
                         data: {
                             class_id: this.state.classId
-                        },
-                        headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded',
                         }
                     }).then(function(res) {
                         console.log(res.data);
@@ -58,9 +56,6 @@ class ClassHeader extends Component {
                         url: 'https://wx.redrock.team/orientation-plus/class/cancel_like',
                         data: {
                             class_id: this.state.classId
-                        },
-                        headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded',
                         }
                     }).then(function(res) {
                         console.log(res.data);
@@ -71,13 +66,20 @@ class ClassHeader extends Component {
     }
 
     render() {
+        let lovesIcon = null
+        const is_liked = this.is_liked;
+        if(is_liked){
+            lovesIcon = <img src={loveIcon} onClick={this.handleClick}/>
+        }else{
+            loveIcon = <img src={noLoveIcon} onClick={this.handleClick}/>
+        }
         return (
             <div>
                 <div className="firstRow">
                     <span className="firstRowLeft">光电学院</span>
                     <span className="loveNum">{this.state.received_like}</span>
                     <span className="firstRowRight">
-                        <img src={loveIcon} onClick={this.handleClick}/>
+                        {lovesIcon}
                     </span>
                 </div>
 
