@@ -134,6 +134,8 @@ class NewList extends Component {
                 index = 0;
             }
             const obj = this.data[index];
+            console.log(this.data);
+            console.log(obj)
             index++;
             return (
                 <div>
