@@ -1,8 +1,7 @@
-.firstRow,
-.secondRow{
+.firstRow{
     background-color: #ffffff;
-    height: 0.766667rem;
-    line-height: 0.766667rem;
+    height: 1.066667rem;
+    line-height: 1.066667rem;
     font-size: 0.326667rem;
     padding-left: 0.366667rem;
 }
@@ -15,7 +14,7 @@
     width: 4.506667rem;
     line-height: 0.5rem;
     height: 0.5rem;
-    margin-top: 0.133333rem;
+    margin-top: 0.3033333rem;
     float: right;
     margin-right: 0.133333rem;
 }

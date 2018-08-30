@@ -23,7 +23,9 @@ function noLove(props){
 class ClassHeader extends Component {
     constructor(props) {
         super(props);
+        
         this.handleClick = this.handleClick.bind(this);
+
         this.state = {
             is_liked: false,
             received_like: '',
@@ -79,13 +81,13 @@ class ClassHeader extends Component {
 
     render() {
         let lovesIcon = null
-        const is_liked = this.is_liked;
+        const is_liked = this.state.is_liked;
         const click = this.handleClick;
-        console.log(click);
+        console.log(is_liked);
         if(is_liked){
             lovesIcon = <love src={loveIcon} onClick={click}/>
         }else{
-            lovesIcon = <img src={noLoveIcon} onClick={click}/>
+            lovesIcon = <noLove src={noLoveIcon} onClick={click}/>
         }
         return (
             <div>
