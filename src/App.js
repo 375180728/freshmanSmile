@@ -44,7 +44,7 @@ class App extends Component {
         };
     }
 
-    componentDidMount() {
+    componentWillMount() {
         var that = this;
         axios({
             method: 'get',
@@ -79,6 +79,8 @@ class App extends Component {
         let isFreshman = this.state.isFreshman;
         let classId = this.state.data.stu_info.class_id;
         let stuId = this.state.data.stu_info.stuId;
+        console.log(stuId);
+        console.log(classId);
         let takeRoute = null;
         if (isFreshman) {
             takeRoute = <Route exact path="/takepic" component={TakePic}/>;
