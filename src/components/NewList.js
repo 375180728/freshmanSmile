@@ -64,14 +64,14 @@ class NewList extends Component {
         });
         this.data = this.state.data;
 
-        // const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
+        const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
         // simulate initial Ajax
         setTimeout(() => {
             this.genData();
             this.setState({
                 dataSource: this.state.dataSource.cloneWithRowsAndSections(this.dataBlobs, this.sectionIDs, this.rowIDs),
                 isLoading: false,
-                height: 400,
+                height: hei,
             });
         }, 600);
     }
