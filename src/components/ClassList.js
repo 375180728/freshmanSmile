@@ -126,7 +126,7 @@ class ClassList extends Component {
                 index = 0;
             }
             const obj = this.state.stu_data[index];
-            console.log(this.state.data.class_info)
+            console.log(this.state.data)
             index++;
             return (
                 <ClassItem obj={obj} index={index} rowID={rowID} match={this.match}/>
