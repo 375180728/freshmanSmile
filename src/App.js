@@ -32,7 +32,7 @@ class App extends Component {
         }).bind(this);
         this.setState({
             data: this.data,
-        }),function(){
+        },function(){
             const stuId = this.state.data.stu_info.stuId;
             if(stuId == 2018){
                 this.setState({
@@ -43,7 +43,7 @@ class App extends Component {
                     isFreshman: false,
                 })
             }
-        }
+        })
     }
 }
 
