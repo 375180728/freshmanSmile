@@ -18,26 +18,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: {
-                "wechat_info": {
-                    "openid": "ouRCyjpYbjwuHt2n7CjpOPnh0Sec",
-                    "nickname": "kjj",
-                    "headimgurl": "https://avatars3.githubusercontent.com/u/323234?s=460&v=4"
-                },
-                "stu_info": {
-                    "college": "软件工程",
-                    "class_received_like": 0,
-                    "major": "软件工程",
-                    "stuId": "2016214223",
-                    "left_class_like": 9,
-                    "class_score": 0,
-                    "class_id": "13001609",
-                    "name": "匡俊嘉"
-                },
-                "smile_info": null
-            },
-            isFreshman: '',
-        };
+            data: {};
     }
 
     componentDidMount() {
@@ -66,6 +47,7 @@ class App extends Component {
                 }
             });
         });
+        console.log(this.state);
 
     }
 
@@ -75,8 +57,6 @@ class App extends Component {
         let isFreshman = this.state.isFreshman;
         let classId = this.state.data.stu_info.class_id;
         let stuId = this.state.data.stu_info.stuId;
-        console.log(stuId);
-        console.log(classId);
         let takeRoute = null;
         if (isFreshman) {
             takeRoute = <Route exact path="/takepic" component={TakePic}/>;

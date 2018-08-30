@@ -77,6 +77,7 @@ class ClassList extends Component {
     componentDidMount() {
         // you can scroll to the specified position
         // setTimeout(() => this.lv.scrollTo(0, 120), 800);
+        
 
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
         // simulate initial Ajax
