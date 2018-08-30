@@ -40,7 +40,7 @@ class NewList extends Component {
             dataSource,
             isLoading: true,
             height: document.documentElement.clientHeight * 3 / 4,
-            data: {},
+            data: [],
         };
 
         this.NUM_SECTIONS = 3;
