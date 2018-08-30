@@ -14,7 +14,7 @@ class ClassHeader extends Component {
         this.handleClick = this.handleClick.bind(this);
         this.state = {
             is_liked: false,
-            received_like: '0',
+            received_like: '',
             classId: this.props.match.params.classId,
         };
         console.log(this.props.obj);
@@ -22,7 +22,7 @@ class ClassHeader extends Component {
 
     componentDidMount() {
         this.setState({
-            received_like: this.props.obj.received_like,
+            received_like: 10,
         }, function() {
             console.log(this.state.received_like);
         });
