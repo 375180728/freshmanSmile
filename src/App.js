@@ -19,7 +19,7 @@ class App extends Component {
         super(props);
         this.state = {
             data: {},
-            isFreshman: true
+            isFreshman: '',
         }
     }
 
@@ -49,12 +49,15 @@ class App extends Component {
                 }
             });
         });
-
     }
 
 
     render() {
         console.log(this.state)
+        
+        if(!this.state.data){
+            return (<div></div>)
+        }
         let isFreshman = this.state.isFreshman;
         let classId = this.state.data.stu_info.class_id;
         let stuId = this.state.data.stu_info.stuId;
