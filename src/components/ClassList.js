@@ -114,6 +114,7 @@ class ClassList extends Component {
 
     render() {
         if(!this.state.data){
+            console.log(1);
             return(<div></div>)
         }
 
