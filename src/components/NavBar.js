@@ -18,10 +18,18 @@ class NavBar extends Component {
         this.state = {
             selectedTab: 'blueTab',
             hidden: false,
-            classId: this.props.classId,
-            stuId: this.props.stuId,
+            classId: '',
+            stuId: '',
         };
     }
+
+    componentDidMount(){
+        this.setState({
+            classId: this.props.classId,
+            stuId: this.props.stuId,
+        })
+    }
+
     render() {
         return (
             <div style={{
