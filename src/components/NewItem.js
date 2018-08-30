@@ -24,7 +24,7 @@ class NewItem extends Component {
         const index = this.props.index;
         if(obj == null){
             alert('暂时没人传照片');
-            window.loaction = '/takePic';
+            window.loaction = './takePic';
             return;
         }
         const time = obj.date.slice(5, 10);
