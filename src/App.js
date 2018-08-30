@@ -18,7 +18,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: {},
+            data: '',
             isFreshman: '',
         }
     }
@@ -55,7 +55,7 @@ class App extends Component {
     render() {
         if(!this.state.data){
             return (<div></div>)
-        }
+        }   
         let isFreshman = this.state.isFreshman;
         let classId = this.state.data.stu_info.class_id;
         let stuId = this.state.data.stu_info.stuId;
