@@ -61,6 +61,7 @@ class NewList extends Component {
             that.setState({
                 data: res.data.data 
             }) 
+            this.data = this.state.data;
         });
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
         // simulate initial Ajax
@@ -128,7 +129,7 @@ class NewList extends Component {
             if (index > this.data.length - 1) {
                 index = 0;
             }
-            const obj = this.state.data[index];
+            const obj = this.data[index];
             console.log(this.state.data);
             console.log(obj)
             index++;
