@@ -8,17 +8,6 @@ import '../styles/ClassList.css';
 
 import axios from 'axios';
 
-function love(props){
-    return (
-        <img src={props.src} onClick={props.onClick}/>
-    )
-}
-
-function noLove(props){
-    return (
-        <img src={props.src} onClick={props.onClick}/>
-    )
-}
 
 class ClassHeader extends Component {
     constructor(props) {
@@ -84,19 +73,20 @@ class ClassHeader extends Component {
     render() {
         let lovesIcon = null
         const is_liked = this.state.is_liked;
-        const click = this.handleClick;
         console.log(is_liked);
         if(is_liked){
-            lovesIcon = <love src={loveIcon} onClick={click}/>
+            lovesIcon = <img src={loveIcon}/>
         }else{
-            lovesIcon = <noLove src={noLoveIcon} onClick={click}/>
+            lovesIcon = <img src={noLoveIcon}/>
         }
         return (
             <div>
                 <div className="firstRow">
                     <span className="firstRowLeft" onClick={this.handleClick}>光电学院</span>
                     <span className="firstRowRight">
-                        {lovesIcon}
+                        <span className="lovesIcon" onClick={this.handleClick}>
+                            {lovesIcon}
+                        </span>
                         <span className="loveNum">{this.state.received_like}</span>
                         <span className="place">10</span>
                         <img src={rankIcon}/>
