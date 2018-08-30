@@ -52,10 +52,10 @@ class ClassList extends Component {
                 class_id: this.match.url.params.classId,
             }
         }).then(function(res) {
-            console.log(res.data)
             that.setState({
                 data: res.data.data 
             }) 
+            console.log(this.state.data)
         });
 
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;

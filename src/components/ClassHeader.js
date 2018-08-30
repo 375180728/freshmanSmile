@@ -14,13 +14,13 @@ class ClassHeader extends Component {
         this.handleClick = this.handleClick.bind(this);
         this.state = {
             is_liked: false,
-            received_like: '',
+            received_like: '0',
             classId: this.props.match.params.classId,
         };
         console.log(this.props.obj);
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.setState({
             received_like: this.props.obj.received_like,
         }, function() {
