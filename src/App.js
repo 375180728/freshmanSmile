@@ -18,7 +18,28 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: {},
+            data: {
+                "wechat_info": {
+                    "openid": "ouRCyjpYbjwuHt2n7CjpOPnh0Sec",
+                    "nickname": "kjj",
+                    "headimgurl": "https://avatars3.githubusercontent.com/u/323234?s=460&v=4"
+                },
+                "stu_info": {
+                    "college": "软件工程",
+                    "class_received_like": 0,
+                    "major": "软件工程",
+                    "stuId": "2018214223",
+                    "left_class_like": 9,
+                    "class_score": 0,
+                    "class_id": "13001609",
+                    "name": "匡俊嘉"
+                },
+                "smile_info": {
+                    "img_url": "https://wx.idsbllp.cn/orientation/images/niyaowoyizhixiaome.jpg",
+                    "nickname": "kjj的笑脸网名",
+                    "descp": "kjj的笑脸描述"
+                }
+            },
             isFreshman: '',
         };
     }
