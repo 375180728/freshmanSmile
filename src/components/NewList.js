@@ -51,7 +51,7 @@ class NewList extends Component {
         this.rowIDs = [];
     }
 
-    componentWillMount(){
+    componentDidMount() {
         var that = this;
         axios({
             method: 'get',
@@ -62,11 +62,6 @@ class NewList extends Component {
                 data: res.data.data 
             }) 
         });
-        this.data = that.state.data;
-        console.log(this.data)
-    }
-
-    componentDidMount() {
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
         // simulate initial Ajax
         setTimeout(() => {
@@ -133,8 +128,8 @@ class NewList extends Component {
             if (index > this.data.length - 1) {
                 index = 0;
             }
-            const obj = this.data[index];
-            console.log(this.data);
+            const obj = this.state.data[index];
+            console.log(this.state.data);
             console.log(obj)
             index++;
             return (
