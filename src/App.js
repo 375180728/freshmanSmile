@@ -53,9 +53,7 @@ class App extends Component {
 
 
     render() {
-        console.log(this.state.data == {})
-
-        if(this.state.data == {}){
+        if(!this.state.data){
             return (<div></div>)
         }
         let isFreshman = this.state.isFreshman;
