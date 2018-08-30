@@ -67,7 +67,7 @@ class App extends Component {
                         isFreshman: false,
                     },function(){
                         console.log(this.state);
-                    };
+                    });
                 }
             });
         });
@@ -76,7 +76,7 @@ class App extends Component {
 
 
     render() {
-        let isFreshman = this.state.isFreshman; 
+        let isFreshman = this.state.isFreshman;
         let classId = this.state.data.stu_info.class_id;
         let stuId = this.state.data.stu_info.stuId;
         let takeRoute = null;
