@@ -16,7 +16,11 @@
     height: 2.633333rem;
     width: 3.533333rem;
     border-radius: 4px;
-    background-color: black;
+}
+
+.headImg{
+    width: 100%;
+    height: 100%;
 }
 
 .photoInfo{

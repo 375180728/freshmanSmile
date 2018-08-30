@@ -35,7 +35,6 @@ class NewList extends Component {
             rowHasChanged: (row1, row2) => row1 !== row2,
             sectionHeaderHasChanged: (s1, s2) => s1 !== s2,
         });
-        this.match = this.props.match;
         this.state = {
             dataSource,
             isLoading: true,
@@ -43,6 +42,7 @@ class NewList extends Component {
             data: [],
         };
 
+        this.match = this.props.match;
         this.NUM_SECTIONS = 3;
         this.NUM_ROWS_PER_SECTION = 4;
         this.dataBlobs = {};
@@ -63,6 +63,7 @@ class NewList extends Component {
             }) 
         });
         this.data = this.state.data;
+
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
         // simulate initial Ajax
         setTimeout(() => {
@@ -134,9 +135,7 @@ class NewList extends Component {
             console.log(obj)
             index++;
             return (
-                <div>
-                    <NewItem obj={obj} index={index} rowID={rowID} match={this.match}/>
-                </div>
+                <NewItem obj={obj} index={index} rowID={rowID} match={this.match}/>
                 );
         };
 

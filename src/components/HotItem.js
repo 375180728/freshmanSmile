@@ -25,7 +25,7 @@ class HotItem extends Component{
             <div className="showListItem" key={rowID}>
                 <Link to={`${match.url}/` + `${obj.class_id}`}>
                     <div className="headImg">
-                        
+                        <img src={obj.img_url}>
                     </div>
                     <div className="photoInfo">
                         <div className="classNum">{obj.class_id}</div>

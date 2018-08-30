@@ -38,35 +38,12 @@ class NewList extends Component {
             dataSource,
             isLoading: true,
             height: document.documentElement.clientHeight * 3 / 4,
+            data: []
         };
 
-        this.json = {
-            "status": 200,
-            "code": 1,
-            "data": [
-                {
-                    "major": "测试专业",
-                    "college": "测试学院",
-                    "class_id": "test1",
-                    "score": 219
-                },
-                {
-                    "major": "通信工程",
-                    "college": "通信学院",
-                    "class_id": "01011603",
-                    "score": 0
-                },
-                {
-                    "major": "软件工程",
-                    "college": "软件工程",
-                    "class_id": "13001609",
-                    "score": 0
-                }
-            ],
-            "msg": "succeed"
-        };
+        
+
         this.match = this.props.match;
-        this.data = this.json.data;
         this.NUM_SECTIONS = 3;
         this.NUM_ROWS_PER_SECTION = 4;
         this.dataBlobs = {};
@@ -76,8 +53,17 @@ class NewList extends Component {
     }
 
     componentDidMount() {
-        // you can scroll to the specified position
-        // setTimeout(() => this.lv.scrollTo(0, 1200), 800);
+        var that = this;
+        axios({
+            method: 'get',
+            url: 'https://wx.redrock.team/orientation-plus/class/list?type=hottest',
+        }).then(function(res) {
+            console.log(res.data)
+            that.setState({
+                data: res.data.data 
+            }) 
+        });
+        this.data = this.state.data;
 
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
         // simulate initial Ajax
@@ -145,7 +131,7 @@ class NewList extends Component {
             if (index > this.data.length - 1) {
                 index = 0;
             }
-            const obj = this.data[index];
+            const obj = this.state.data[index];
             index++;
             return (
                 <HotItem obj={obj} index={index} rowID={rowID} match={this.match}/>

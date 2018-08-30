@@ -32,7 +32,6 @@ class App extends Component {
             that.setState({
                 data: res.data.data,
             }, function() {
-                console.log(this.state);
                 this.stuId = that.state.data.stu_info.stuId.substring(0, 4);
                 if (this.stuId == 2018) {
                     that.setState({
