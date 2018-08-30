@@ -71,7 +71,7 @@ class ClassHeader extends Component {
         if(is_liked){
             lovesIcon = <img src={loveIcon} onClick={this.handleClick}/>
         }else{
-            loveIcon = <img src={noLoveIcon} onClick={this.handleClick}/>
+            lovesIcon = <img src={noLoveIcon} onClick={this.handleClick}/>
         }
         return (
             <div>
