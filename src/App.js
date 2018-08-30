@@ -33,6 +33,7 @@ class App extends Component {
                 console.log(this.state)
             })
         }).bind(this)
+    }
 
 
     render() {
