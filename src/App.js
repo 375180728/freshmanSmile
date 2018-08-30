@@ -28,26 +28,28 @@ class App extends Component {
             method: 'get',
             url: 'https://wx.redrock.team/orientation-plus/indv/info',
         }).then(function(res) {
-            this.data = res.data.data;
-        }).bind(this);
-        this.setState({
-            data: this.data,
-        },function(){
-            const stuId = this.state.data.stu_info.stuId;
-            if(stuId == 2018){
-                this.setState({
-                    isFreshman: true,
-                })
-            } else {
-                this.setState({
-                    isFreshman: false,
-                })
-            }
-        })
+            that.setState({
+                data: res.data.data,
+            }, function() {
+                console.log(this.state);
+                this.stuId = this.state.data.stu_info.stuId.substring(0, 4);
+                if (this.stuId == 2018) {
+                    that.setState({
+                        isFreshman: true,   
+                    },function(){
+                        console.log(this.state)
+                    });
+                } else {
+                    this.setState({
+                        isFreshman: false,
+                    },function(){
+                        console.log(this.state);
+                    });
+                }
+            });
+        });
+
     }
-}
-
-
 
 
     render() {
