@@ -8,6 +8,18 @@ import '../styles/ClassList.css';
 
 import axios from 'axios';
 
+function love(props){
+    return (
+        <img src={props.src} onClick={props.onClick}/>
+    )
+}
+
+function noLove(props){
+    return (
+        <img src={props.src} onClick={props.onClick}/>
+    )
+}
+
 class ClassHeader extends Component {
     constructor(props) {
         super(props);
@@ -71,7 +83,7 @@ class ClassHeader extends Component {
         const click = this.handleClick;
         console.log(click);
         if(is_liked){
-            lovesIcon = <img src={loveIcon} onClick={click}/>
+            lovesIcon = <love src={loveIcon} onClick={click}/>
         }else{
             lovesIcon = <img src={noLoveIcon} onClick={click}/>
         }
