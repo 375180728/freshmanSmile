@@ -43,36 +43,6 @@ class NewList extends Component {
             data: {},
         };
 
-        this.json = {
-            "status": 200,
-            "code": 1,
-            "data": [
-                {
-                    "major": "软件工程",
-                    "college": "软件工程",
-                    "date": "2018-08-25T06:51:27.000+0000",
-                    "class_id": "13001609",
-                    "score": '1000'
-                },
-                {
-                    "major": "通信工程",
-                    "college": "通信学院",
-                    "date": "2018-08-20T05:37:38.000+0000",
-                    "class_id": "01011603",
-                    "score": '1000'
-                },
-                {
-                    "major": "测试专业",
-                    "college": "测试学院",
-                    "date": "2018-08-19T05:37:38.000+0000",
-                    "class_id": "test1",
-                    "score": '1000'
-                }
-            ],
-            "msg": "succeed"
-        };
-
-        this.data = this.json.data;
         this.NUM_SECTIONS = 3;
         this.NUM_ROWS_PER_SECTION = 4;
         this.dataBlobs = {};
@@ -81,7 +51,7 @@ class NewList extends Component {
         this.rowIDs = [];
     }
 
-    componentDidMount() {
+    componentWillMount(){
         var that = this;
         axios({
             method: 'get',
@@ -92,7 +62,10 @@ class NewList extends Component {
                 data: res.data.data 
             }) 
         });
+        this.data = this.state.data;
+    }
 
+    componentDidMount() {
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
         // simulate initial Ajax
         setTimeout(() => {
