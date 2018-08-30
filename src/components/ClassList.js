@@ -56,9 +56,11 @@ class ClassList extends Component {
             console.log(res.data);
             that.setState({
                 data: res.data.data 
+            },function(){
+                console.log(this.state.data)
             }) 
-            console.log(this.state.data)
         });
+        console.log(this.state.data)
 
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
         // simulate initial Ajax
@@ -111,6 +113,10 @@ class ClassList extends Component {
     }
 
     render() {
+        if(!this.state.data){
+            return(<div></div>)
+        }
+
         const separator = (sectionID, rowID) => (
             <div
             key={`${sectionID}-${rowID}`}
