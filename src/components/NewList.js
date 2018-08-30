@@ -61,8 +61,8 @@ class NewList extends Component {
             that.setState({
                 data: res.data.data 
             }) 
-            this.data = this.state.data;
         });
+        this.data = this.state.data;
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
         // simulate initial Ajax
         setTimeout(() => {
