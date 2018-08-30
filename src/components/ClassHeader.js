@@ -77,16 +77,10 @@ class ClassHeader extends Component {
             <div>
                 <div className="firstRow">
                     <span className="firstRowLeft">光电学院</span>
-                    <span className="loveNum">{this.state.received_like}</span>
                     <span className="firstRowRight">
                         {lovesIcon}
-                    </span>
-                </div>
-
-                <div className="secondRow">
-                    <span className="secondRowLeft">光电学院</span>
-                    <span className="place"></span>
-                    <span className="secondRowRight">
+                        <span className="loveNum">{this.state.received_like}</span>
+                        <span className="place"></span>
                         <img src={rankIcon}/>
                     </span>
                 </div>

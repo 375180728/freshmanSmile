@@ -30,7 +30,6 @@ class HotItem extends Component{
                     <div className="photoInfo">
                         <div className="classNum">{obj.class_id}</div>
                         <div className="college">{obj.college}</div>
-                        <div className="major">{obj.major}</div>
                         <div className="rankAndNice">                        
                             <span className="nice">
                                 <img className="niceIcon" src={scoreIcon}/>

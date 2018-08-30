@@ -53,6 +53,7 @@ class ClassList extends Component {
                 class_id: this.match.params.classId,
             }
         }).then(function(res) {
+            console.log(res.data);
             that.setState({
                 data: res.data.data 
             }) 
