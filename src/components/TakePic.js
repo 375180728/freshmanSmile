@@ -61,6 +61,8 @@ class TakePic extends Component {
             }
         }).then(function(res) {
             alert(res.msg)
+        }).catch(function(error){
+            alert(error);
         });
     }
 
