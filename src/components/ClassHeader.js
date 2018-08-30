@@ -22,7 +22,7 @@ class ClassHeader extends Component {
 
     componentDidMount() {
         this.setState({
-            received_like: 10,
+            received_like: this.props.obj.received_like,
         }, function() {
             console.log(this.state.received_like);
         });
@@ -69,6 +69,7 @@ class ClassHeader extends Component {
         let lovesIcon = null
         const is_liked = this.is_liked;
         const click = this.handleClick;
+        console.log(click);
         if(is_liked){
             lovesIcon = <img src={loveIcon} onClick={click}/>
         }else{
