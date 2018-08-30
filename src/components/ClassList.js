@@ -44,6 +44,7 @@ class ClassList extends Component {
     }
 
     componentDidMount() {
+        console.log(this.match)
         var that = this;
         axios({
             method: 'get',
@@ -96,7 +97,6 @@ class ClassList extends Component {
         if (this.state.isLoading && !this.state.hasMore) {
             return;
         }
-        console.log('reach end', event);
         this.setState({
             isLoading: true
         });
