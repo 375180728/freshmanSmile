@@ -63,6 +63,7 @@ class NewList extends Component {
             }) 
         });
         this.data = this.state.data;
+        console.log(this.data)
     }
 
     componentDidMount() {

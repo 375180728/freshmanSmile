@@ -21,6 +21,10 @@ class NewItem extends Component {
         const obj = this.props.obj;
         const rowID = this.props.rowID;
         const index = this.props.index;
+        if(obj.data == null){
+            alert('暂时没人传照片')；
+            window.loaction.href = '/TakePic'
+        }
         const time = obj.date.slice(5, 10);
         const match = this.match;
         return (
