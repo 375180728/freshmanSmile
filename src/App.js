@@ -24,6 +24,7 @@ class App extends Component {
     }
 
     componentWillMount() {
+        const that = this;
         axios({
             method: 'get',
             url: 'https://wx.redrock.team/orientation-plus/indv/info',
