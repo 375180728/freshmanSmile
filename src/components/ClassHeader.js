@@ -82,7 +82,7 @@ class ClassHeader extends Component {
         return (
             <div>
                 <div className="firstRow">
-                    <span className="firstRowLeft" onClick={this.handleClick}>光电学院</span>
+                    <span className="firstRowLeft">光电学院</span>
                     <span className="firstRowRight">
                         <span className="lovesIcon" onClick={this.handleClick}>
                             {lovesIcon}
