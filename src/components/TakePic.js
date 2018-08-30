@@ -60,7 +60,7 @@ class TakePic extends Component {
                 'Content-Type': 'multipart/form-data',
             }
         }).then(function(res) {
-            console.log(res.data)
+            alert(res.msg)
         });
     }
 
