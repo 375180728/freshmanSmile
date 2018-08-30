@@ -18,7 +18,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: {},   
+            data: {},       
             isFreshman: '',
         };
     }
@@ -27,11 +27,8 @@ class App extends Component {
         axios({
             method: 'get',
             url: 'https://wx.redrock.team/orientation-plus/indv/info',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            }
         }).then(function(res) {
-            console.log(res.data);
+            console.log(res.data.data);
             this.setState({
                 data: res.data.data,
             }, function() {
