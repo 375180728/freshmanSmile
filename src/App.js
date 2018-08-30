@@ -23,7 +23,7 @@ class App extends Component {
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         var that = this;
         axios({
             method: 'get',
