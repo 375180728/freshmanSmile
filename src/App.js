@@ -50,12 +50,12 @@ class App extends Component {
             method: 'get',
             url: 'https://wx.redrock.team/orientation-plus/indv/info',
         }).then(function(res) {
-            console.log(res.data.data);
             that.setState({
                 data: res.data.data,
             }, function() {
                 console.log(this.state);
                 this.stuId = this.state.data.stu_info.stuId.substring(0, 4);
+                console.log(this.stuId)
                 if (this.stuId == 2018) {
                     that.setState({
                         isFreshman: true,   
