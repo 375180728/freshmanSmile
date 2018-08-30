@@ -45,26 +45,27 @@ class App extends Component {
     }
 
     componentDidMount() {
+        var that = this;
         axios({
             method: 'get',
             url: 'https://wx.redrock.team/orientation-plus/indv/info',
         }).then(function(res) {
             console.log(res.data.data);
-            this.setState({
+            that.setState({
                 data: res.data.data,
             }, function() {
                 console.log(this.state);
                 this.stuId = this.state.data.stu_info.stuId.substring(0, 4);
                 if (this.stuId == 2018) {
-                    this.setState({
+                    that.setState({
                         isFreshman: true,   
                     },function(){
                         console.log(this.state)
-                    }).bind(this);
+                    });
                 } else {
                     this.setState({
                         isFreshman: false,
-                    }).bind(this);
+                    });
                 }
             });
         });

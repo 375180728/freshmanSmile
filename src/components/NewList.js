@@ -82,12 +82,13 @@ class NewList extends Component {
     }
 
     componentDidMount() {
+        var that = this;
         axios({
             method: 'get',
             url: 'https://wx.redrock.team/orientation-plus/class/list?type=latest',
         }).then(function(res) {
             console.log(res.data)
-            this.setState({
+            that.setState({
                 data: res.data.data 
             }) 
         });
