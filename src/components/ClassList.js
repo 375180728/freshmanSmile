@@ -30,7 +30,7 @@ class ClassList extends Component {
             dataSource,
             isLoading: true,
             height: document.documentElement.clientHeight * 3 / 4,
-            data: []
+            data: ''
         };
 
         
@@ -57,7 +57,6 @@ class ClassList extends Component {
                 data: res.data.data 
             }) 
         });
-        this.data = this.state.data.stu_info;
 
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
         // simulate initial Ajax
@@ -122,11 +121,11 @@ class ClassList extends Component {
         );
         let index = 0;
         const row = (rowData, sectionID, rowID) => {
-            if (index > this.stu_data.length - 1) {
+            if (index > this.stu_info.length - 1) {
                 index = 0;
             }
-            const obj = this.state.stu_data[index];
-            console.log(this.state.data)
+            const obj = this.state.data.stu_info[index];
+            console.log(this.state.data.class_info);
             index++;
             return (
                 <ClassItem obj={obj} index={index} rowID={rowID} match={this.match}/>
