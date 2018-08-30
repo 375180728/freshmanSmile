@@ -27,6 +27,8 @@ class NavBar extends Component {
         this.setState({
             classId: this.props.classId,
             stuId: this.props.stuId,
+        },function(){
+            console.log(this.state);
         })
     }
 
@@ -137,6 +139,7 @@ class NavBar extends Component {
                 } else {
                     url = '/about'
                 }
+                console.log(url);
                 this.props.history.push(url);
                 this.setState({
                     selectedTab: 'greenTab',
