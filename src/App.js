@@ -60,11 +60,11 @@ class App extends Component {
                         isFreshman: true,   
                     },function(){
                         console.log(this.state)
-                    });
+                    }).bind(this);
                 } else {
                     this.setState({
                         isFreshman: false,
-                    });
+                    }).bind(this);
                 }
             });
         });
