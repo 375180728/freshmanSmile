@@ -41,6 +41,7 @@ class TakePic extends Component {
             image: '',
             isAdded: false,
         }
+        this.imgdata = new FormData();
         this.handleClick = this.handleClick.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleTextChange = this.handleTextChange.bind(this);
@@ -70,24 +71,22 @@ class TakePic extends Component {
         this.setState({
             nickName: event.target.value,
         })
-        console.log(this.state);
+        this.imgdata.append("nickname",this.state.nickname);
+        console.log(this.imgdata);
     }
 
     handleTextChange(event){
         this.setState({
             description: event.target.value,
         })
-        console.log(this.state);
+        this.imgdata.append("descp",this.state.descriptions);
+        console.log(this.imgdata);
     }
 
     handleFileChange(event){
         const file = event.target.files[0];
-
-        this.imgdata = new FormData();
         console.log(file)
         console.log(this.state)
-        this.imgdata.append("nickname",this.state.nickname);
-        this.imgdata.append("descp",this.state.descriptions);
         this.imgdata.append("image",file);
         console.log(this.imgdata);
 
