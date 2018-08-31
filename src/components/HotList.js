@@ -129,7 +129,7 @@ class NewList extends Component {
         let index = 0;
         const row = (rowData, sectionID, rowID) => {
             if (index > this.data.length - 1) {
-                index = 0;
+                console.log('加载完了')
             }
             const obj = this.state.data[index];
             index++;
