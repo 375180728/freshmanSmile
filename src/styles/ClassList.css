@@ -7,7 +7,11 @@
 }
 
 .firstRowLeft{
+    width: 4rem;
     margin-top: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .firstRowRight{
@@ -17,6 +21,10 @@
     margin-top: 0.3033333rem;
     float: right;
     margin-right: 0.4033333rem;
+}
+
+.firstRowM{
+    float: left;
 }
 
 .loveNum{

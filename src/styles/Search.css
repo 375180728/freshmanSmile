@@ -20,16 +20,13 @@
 
 .search span{
     text-align: center;
-    width: 10%;
-    float: right;
-    height: 100%;
     line-height: 1rem;
+    float: right;
 }
 
 .serchIcon{
-    margin-right: 0.266667rem;
+    margin-right: 0.666667rem;
     margin-top: 0.3rem;
-    float: right;
     width: 0.4rem;
     height: 0.4rem;
 }

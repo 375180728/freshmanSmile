@@ -114,6 +114,7 @@ class ClassHeader extends Component {
             <div>
                 <div className="firstRow">
                     <span className="firstRowLeft">{this.state.college}</span>
+                    <span className="firstRowM">{this.state.classId}</span>
                     <span className="firstRowRight">
                         <span className="lovesIcon" onClick={this.handleClick}>
                             {lovesIcon}

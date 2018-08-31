@@ -90,9 +90,9 @@ class TakePic extends Component {
             //     'Content-Type': 'application/x-www-form-urlencoded'
             // },
         }).then(function(res) {
-            alert(res.msg)
+            alert('已经成功上传')
         }).catch(function(error){
-            alert(error);
+            console.log(error)
         });
     }
 
