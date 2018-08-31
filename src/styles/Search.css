@@ -11,7 +11,7 @@
 .search input {
     float: left;
     padding-left: 0.566667rem;
-    width: 80%;
+    width: 60%;
     height: 100%;
     background-color: transparent;
     border: 0;
@@ -19,7 +19,7 @@
 }
 
 .search span{
-    margin-right: 0.266667rem;
+    text-align: center;
     width: 10%;
     float: right;
     height: 100%;
@@ -27,9 +27,11 @@
 }
 
 .serchIcon{
+    margin-right: 0.266667rem;
+    margin-top: 0.3rem;
     float: right;
-    width: 0.533333rem;
-    height: 0.533333rem;
+    width: 0.4rem;
+    height: 0.4rem;
 }
 
 .serchIcon img{
