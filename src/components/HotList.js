@@ -21,7 +21,7 @@ function MyBody(props) {
         );
 }
 
-class NewList extends Component {
+class HotList extends Component {
     constructor(props) {
         super(props);
         const getSectionData = (dataBlob, sectionID) => dataBlob[sectionID];
@@ -128,7 +128,6 @@ class NewList extends Component {
             />
         );
         let index = 0;
-        console.log(this.data.length);
         const row = (rowData, sectionID, rowID) => {
             if (index > this.state.data.length - 1) {
                 console.log('加载完了');
@@ -164,4 +163,4 @@ class NewList extends Component {
     }
 }
 
-export default NewList;
+export default HotList;
