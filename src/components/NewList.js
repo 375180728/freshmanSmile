@@ -144,25 +144,12 @@ class NewList extends Component {
         };
 
         return (
-            <ListView
-            ref={el => this.lv = el}
-            dataSource={this.state.dataSource}
-            renderBodyComponent={() => <MyBody />}
-            renderRow={row}
-            renderSeparator={separator}
-            style={{
-                height: this.state.height,
-                overflow: 'auto',
-            }}
-            pageSize={10}
-            onScroll={() => {
-                console.log('scroll');
-            }}
-            scrollRenderAheadDistance={500}
-            onEndReached={this.onEndReached}
-            onEndReachedThreshold={10}
-            />
-            );
+            <div>
+            {
+                this.state.data.length > 0 && this.state.data.map((item, index) => <NewItem obj={item} index={index} rowID={index} match={this.match}/>)
+            }
+            </div>
+        );
     }
 }
 
