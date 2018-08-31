@@ -19,7 +19,8 @@ class Search extends Component {
     handleClick(){
         console.log(this.state.word);
         const url = `${this.match.url}/` + `${this.state.word}`;
-        window.loaction.pathname = url;
+        console.log(url);
+        window.location.pathname = url;
     }
 
     handleWordChange(event){
