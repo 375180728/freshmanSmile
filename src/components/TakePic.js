@@ -48,10 +48,11 @@ class TakePic extends Component {
     }   
 
     handleClick(){
+        console.log(this.imgdata)
         axios({
             method: 'post',
             url: 'https://wx.redrock.team/orientation-plus/indv/upload',
-            params: this.imgdata,
+            data: this.imgdata,
             body: {
                 'Content-Type': 'multipart/form-data',
             },
@@ -80,8 +81,15 @@ class TakePic extends Component {
     }
 
     handleFileChange(event){
-        console.log(1)
         const file = event.target.files[0];
+
+        this.imgdata = new FormData();
+        console.log(file)
+        console.log(this.state)
+        this.imgdata.append("nickname",this.state.nickname);
+        this.imgdata.append("descp",this.state.descriptions);
+        this.imgdata.append("image",file);
+        console.log(this.imgdata);
 
         const maxsize = 5000 * 1024;
         const uploadmax = 100 * 1024;
@@ -95,11 +103,7 @@ class TakePic extends Component {
             alert("文件过大");
             return;
         }
-        this.imgdata = new FormData();
-        this.imgdata.append("image",file);
-        this.imgdata.append("nickname",this.state.nickname);
-        this.imgdata.append("descp",this.state.descriptions);
-        console.log(this.imgdata);
+        
 
         var reader  = new FileReader();
         var result;
