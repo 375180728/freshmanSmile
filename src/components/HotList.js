@@ -132,7 +132,7 @@ class NewList extends Component {
             if (index > this.data.length) {
                 index = 0;
             }
-            const obj = this.state.data[index];
+            const obj = this.data[index];
             console.log(obj)
             index++;
             return (
