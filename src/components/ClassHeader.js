@@ -52,9 +52,8 @@ class ClassHeader extends Component {
                     })
                 } else {
                     this.setState({
-                        received_like: parseInt(this.state.received_like) - 1
-                        })
-                    }
+                        received_like: parseInt(this.state.received_like) - 1,
+                    })
                 }
             })
         })
