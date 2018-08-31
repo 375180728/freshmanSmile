@@ -13,7 +13,6 @@ import niceNumIcon from '../images/niceNumIcon.png';
 import banner from '../images/banner.png';
 
 import NewItem from './NewItem';
-import ClassList from './ClassList';
 
 function MyBody(props) {
     return (

@@ -21,19 +21,17 @@ function MyBody(props) {
         );
 }
 
-class NewList extends Component {
+class HotList extends Component {
     constructor(props) {
         super(props);
         const getSectionData = (dataBlob, sectionID) => dataBlob[sectionID];
         const getRowData = (dataBlob, sectionID, rowID) => dataBlob[rowID];
-
         const dataSource = new ListView.DataSource({
             getRowData,
             getSectionHeaderData: getSectionData,
             rowHasChanged: (row1, row2) => row1 !== row2,
             sectionHeaderHasChanged: (s1, s2) => s1 !== s2,
         });
-
         this.state = {
             dataSource,
             isLoading: true,
@@ -132,7 +130,7 @@ class NewList extends Component {
             if (index > this.data.length) {
                 index = 0;
             }
-            const obj = this.data[index];
+            const obj = this.state.data[index];
             console.log(obj)
             index++;
             return (
@@ -163,4 +161,4 @@ class NewList extends Component {
     }
 }
 
-export default NewList;
+export default HotList;

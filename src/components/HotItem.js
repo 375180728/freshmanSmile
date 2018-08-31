@@ -24,25 +24,23 @@ class HotItem extends Component{
         console.log(obj)
         return(
             <div className="showListItem" key={rowID}>
-                <Link to={`${match.url}/` + `${obj.class_id}`}>
-                    <div className="headImg">
-                        <img src={obj.img_url}/>
+                <div className="headImg">
+                    <img src={obj.img_url}/>
+                </div>
+                <div className="photoInfo">
+                    <div className="classNum">{obj.class_id}</div>
+                    <div className="college">{obj.college}</div>
+                    <div className="rankAndNice">                        
+                        <span className="nice">
+                            <img className="niceIcon" src={scoreIcon}/>
+                            <span className="niceNum">{obj.score}</span>
+                        </span>
+                        <span className="rank">
+                            <img className="rankIcon" src={rankIcon}/>
+                            <span className="rankNum">No.{index}</span>
+                        </span>
                     </div>
-                    <div className="photoInfo">
-                        <div className="classNum">{obj.class_id}</div>
-                        <div className="college">{obj.college}</div>
-                        <div className="rankAndNice">                        
-                            <span className="nice">
-                                <img className="niceIcon" src={scoreIcon}/>
-                                <span className="niceNum">{obj.score}</span>
-                            </span>
-                            <span className="rank">
-                                <img className="rankIcon" src={rankIcon}/>
-                                <span className="rankNum">No.{index}</span>
-                            </span>
-                        </div>
-                    </div>
-                </Link>
+                </div>
             </div>
 
         )
