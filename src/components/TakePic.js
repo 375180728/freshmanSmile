@@ -51,11 +51,12 @@ class TakePic extends Component {
         axios({
             method: 'post',
             url: 'https://wx.redrock.team/orientation-plus/indv/upload',
-            data: {
-                image: this.imgdata,
-            },
+            params: this.imgdata,
             body: {
                 'Content-Type': 'multipart/form-data',
+            },
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
             }
         }).then(function(res) {
             alert(res.msg)
