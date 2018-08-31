@@ -3,15 +3,15 @@
     line-height: 1rem;
     width: 80%;
     margin: 0 auto;
-    background-color: rgb(230, 230, 230)
+    margin-top: 0.24rem;
+    margin-bottom: 0.24rem;
+    background-color: rgb(230, 230, 230);
 }
 
 .search input {
     float: left;
     padding-left: 0.566667rem;
-    margin-top: 0.24rem;
-    margin-bottom: 0.24rem;
-    width: 80%;
+    width: 100%;
     height: 100%;
     background-color: transparent;
     border: 0;
