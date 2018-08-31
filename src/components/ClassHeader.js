@@ -102,7 +102,7 @@ class ClassHeader extends Component {
         if(!this.state.rank){
             return (<div></div>)
         }
-        if(this.state.rank = -1){
+        if(this.state.rank < 0){
             this.setState({
                 rank: 0,
             })
