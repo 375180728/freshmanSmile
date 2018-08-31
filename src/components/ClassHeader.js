@@ -4,6 +4,7 @@ import rankIcon from '../images/rankIcon.png';
 import niceNumIcon from '../images/niceNumIcon.png';
 import loveIcon from '../images/loveIcon.png';
 import noLoveIcon from '../images/noLoveIcon.png';
+import waiting from '../images/waiting.png';
 import '../styles/ClassList.css';
 
 import axios from 'axios';
@@ -66,7 +67,7 @@ class ClassHeader extends Component {
 
     render() {
         if(!this.state.rank){
-            return (<div></div>)
+            return (<div className="waiting"><img src={waiting}/></div>)
         }
         if(this.state.rank < 0){
             this.setState({
