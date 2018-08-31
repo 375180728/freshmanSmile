@@ -49,6 +49,25 @@ class TakePic extends Component {
     }   
 
     handleClick(){
+        if(!this.state.nickName){
+            alert('请输入你的昵称')
+            return;
+        }
+        if(!this.state.description){
+            alert('请输入你的大学感言')
+            return;
+        }
+
+        if(this.state.nickName.length > 5){
+            alert('昵称不超过五个字哦');
+            return;
+        }
+
+        if(this.state.description.length > 20){
+            alert('大学感言不超过二十个字哦');
+            return;
+        }
+
         console.log(this.state);
 
         const imgdata = new FormData();
@@ -161,7 +180,7 @@ class TakePic extends Component {
                             <span className="decIcon">
                                 <img src={decIcon}/>
                             </span>
-                            <span className="decText">宣言</span>
+                            <span className="decText">大学感言</span>
                         </div>
                         <textarea className="descriptionWord" type="text" placeholder="限20字以内" onChange={this.handleTextChange} value={this.state.description}>
                         </textarea>

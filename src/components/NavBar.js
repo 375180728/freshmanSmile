@@ -98,7 +98,7 @@ class NavBar extends Component {
             }}
             />
             }
-            title="晒笑脸"
+            title="晒照片"
             key="takePic"
             selected={this.state.selectedTab === 'redTab'}
             onPress={() => {

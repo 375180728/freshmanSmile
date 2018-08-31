@@ -20,6 +20,7 @@ class ClassHeader extends Component {
             received_like: '',
             classId: '',
             rank: '',
+            college: '',
         };
         console.log(this.props.obj);
     }
@@ -30,6 +31,7 @@ class ClassHeader extends Component {
             is_liked: this.props.obj.is_liked,
             classId: this.props.obj.class_id,
             rank: this.props.obj.class_rank,
+            college: this.props.obj.college,
         }, function() {
             console.log(this.state);
         });
@@ -111,7 +113,7 @@ class ClassHeader extends Component {
         return (
             <div>
                 <div className="firstRow">
-                    <span className="firstRowLeft">光电学院</span>
+                    <span className="firstRowLeft">{this.state.college}</span>
                     <span className="firstRowRight">
                         <span className="lovesIcon" onClick={this.handleClick}>
                             {lovesIcon}
