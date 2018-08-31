@@ -27,6 +27,9 @@ class NewItem extends Component {
         var D = date.getDate() + ' ';
         var h = date.getHours() + ':';
         var m = date.getMinutes();
+        if (parseInt(m) < 10){
+            m = '0' + m
+        }
         var s = date.getSeconds();
         return M +'-'+D+h+m;
     }
