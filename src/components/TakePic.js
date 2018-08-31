@@ -40,8 +40,8 @@ class TakePic extends Component {
             description: '',
             image: '',
             isAdded: false,
+            imgdata: new FormData(),
         }
-        this.imgdata = new FormData();
         this.handleClick = this.handleClick.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleTextChange = this.handleTextChange.bind(this);
@@ -49,11 +49,11 @@ class TakePic extends Component {
     }   
 
     handleClick(){
-        alert(this.imgdata)
+        alert(this.state.imgdata)
         axios({
             method: 'post',
             url: 'https://wx.redrock.team/orientation-plus/indv/upload',
-            data: this.imgdata,
+            data: this.state.imgdata,
             // body: {
             //     'Content-Type': 'multipart/form-data',
             // },
@@ -70,25 +70,30 @@ class TakePic extends Component {
     handleInputChange(event){
         this.setState({
             nickName: event.target.value,
+            imgdata: this.state.imgdata.append("nickname", event.target.value),
+        },function(){
+            console.log(this.state.imgdata);
         })
-        this.imgdata.append("nickname",this.state.nickname);
-        console.log(this.imgdata);
     }
 
     handleTextChange(event){
         this.setState({
             description: event.target.value,
+            imgdata: this.state.imgdata.append("descp", event.target.value),
+        },function(){
+            console.log(this.imgdata);
         })
-        this.imgdata.append("descp",this.state.descriptions);
-        console.log(this.imgdata);
     }
 
     handleFileChange(event){
         const file = event.target.files[0];
         console.log(file)
         console.log(this.state)
-        this.imgdata.append("image",file);
-        console.log(this.imgdata);
+        this.setState({
+            imgdata: this.state.imgdata.append("image", file),
+        },function(){
+            console.log(this.imgdata);
+        })
 
         const maxsize = 5000 * 1024;
         const uploadmax = 100 * 1024;
