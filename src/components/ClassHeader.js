@@ -35,39 +35,62 @@ class ClassHeader extends Component {
 
     handleClick() {
         console.log('nice')
-        this.setState({
-            is_liked: !this.state.is_liked,
-        }, function() {
-            if (this.state.is_liked) {
-                this.setState({
-                    received_like: parseInt(this.state.received_like) + 1
-                }, function() {
-                    axios({
-                        method: 'post',
-                        url: 'https://wx.redrock.team/orientation-plus/class/like',
-                        params: {
-                            class_id: this.state.classId
-                        }
-                    }).then(function(res) {
-                        console.log(res.data);
-                    });
-                });
-            } else {
-                this.setState({
-                    received_like: parseInt(this.state.received_like) - 1
-                }, function() {
-                    axios({
-                        method: 'post',
-                        url: 'https://wx.redrock.team/orientation-plus/class/cancel_like',
-                        params: {
-                            class_id: this.state.classId
-                        }
-                    }).then(function(res) {
-                        console.log(res.data);
-                    });
-                });
+        axios({
+            method: 'post',
+            url: 'https://wx.redrock.team/orientation-plus/class/like',
+            params: {
+                class_id = this.state.classId
             }
-        });
+        }).then(function(res){
+            console.log(res.data);
+            this.setState({
+                is_liked: !this.state.is_liked,
+            },function(){
+                if(this.state.is_liked) {
+                    this.setState({
+                        received_like: parseInt(this.state.received_like) + 1,
+                    }) else {
+                        this.setState({
+                            received_like: parseInt(this.state.received_like) - 1
+                        })
+                    }
+                }
+            })
+        })
+
+        // this.setState({
+        //     is_liked: !this.state.is_liked,
+        // }, function() {
+        //     if (this.state.is_liked) {
+        //         this.setState({
+        //             received_like: parseInt(this.state.received_like) + 1
+        //         }, function() {
+        //             axios({
+        //                 method: 'post',
+        //                 url: 'https://wx.redrock.team/orientation-plus/class/like',
+        //                 params: {
+        //                     class_id: this.state.classId
+        //                 }
+        //             }).then(function(res) {
+        //                 console.log(res.data);
+        //             });
+        //         });
+        //     } else {
+        //         this.setState({
+        //             received_like: parseInt(this.state.received_like) - 1
+        //         }, function() {
+        //             axios({
+        //                 method: 'post',
+        //                 url: 'https://wx.redrock.team/orientation-plus/class/cancel_like',
+        //                 params: {
+        //                     class_id: this.state.classId
+        //                 }
+        //             }).then(function(res) {
+        //                 console.log(res.data);
+        //             });
+        //         });
+        //     }
+        // });
     }
 
     render() {

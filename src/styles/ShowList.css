@@ -31,14 +31,14 @@
     height: 0.6rem;
 }
 
-.college,
-.major{
+.college{
     color: #4c4c4c;
+    margin-top: 0.2rem
 }
 
 .rankAndNice{
     float: left; 
-    margin-top: 0.203333rem;
+    margin-top: 0.503333rem;
     line-height: 0.366667rem;
     width: 85%;
 }

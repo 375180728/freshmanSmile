@@ -52,9 +52,7 @@ class TakePic extends Component {
             method: 'post',
             url: 'https://wx.redrock.team/orientation-plus/indv/upload',
             data: {
-                nickname: this.state.nickName,
-                desp: this.state.description,
-                image: this.state.image,
+                image: this.imgdata,
             },
             body: {
                 'Content-Type': 'multipart/form-data',
@@ -83,6 +81,7 @@ class TakePic extends Component {
     handleFileChange(event){
         console.log(1)
         const file = event.target.files[0];
+
         const maxsize = 5000 * 1024;
         const uploadmax = 100 * 1024;
         // 检查文件类型
@@ -95,6 +94,12 @@ class TakePic extends Component {
             alert("文件过大");
             return;
         }
+        this.imgdata = new FormData();
+        this.imgdata.append("image",file);
+        this.imgdata.append("nickname",this.state.nickname);
+        this.imgdata.append("descp",this.state.descriptions);
+        console.log(this.imgdata);
+
         var reader  = new FileReader();
         var result;
         let that = this;
