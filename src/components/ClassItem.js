@@ -18,7 +18,7 @@ class ClassItem extends Component {
     }
 
     render() {
-        if(!this.obj){
+        if(!this.props.obj){
             return(<div></div>)
         }
         const obj = this.props.obj;

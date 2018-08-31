@@ -97,6 +97,9 @@ class ClassHeader extends Component {
     }
 
     render() {
+        if(!this.state.rank){
+            return (<div></div>)
+        }
         let lovesIcon = null
         const is_liked = this.state.is_liked;
         console.log(is_liked);
