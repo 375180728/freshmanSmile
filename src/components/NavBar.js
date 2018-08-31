@@ -140,7 +140,7 @@ class NavBar extends Component {
                     url = '/about'
                 }
                 console.log(url);
-                window.location.href += url;
+                this.props.history.push(url);
                 this.setState({
                     selectedTab: 'greenTab',
                 });
