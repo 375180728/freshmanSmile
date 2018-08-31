@@ -38,7 +38,7 @@ class NewList extends Component {
             dataSource,
             isLoading: true,
             height: document.documentElement.clientHeight * 3 / 4,
-            data: []
+            data: [],
         };
 
         
@@ -65,7 +65,7 @@ class NewList extends Component {
         });
         this.data = this.state.data;
 
-        console.log(this.state.data)
+
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
         // simulate initial Ajax
         setTimeout(() => {
@@ -129,10 +129,11 @@ class NewList extends Component {
         );
         let index = 0;
         const row = (rowData, sectionID, rowID) => {
-            if (index > this.state.data.length - 1) {
+            if (index > this.data.length - 1) {
                 index = 0;
             }
             const obj = this.state.data[index];
+            console.log(obj)
             index++;
             return (
                 <HotItem obj={obj} index={index} rowID={rowID} match={this.match}/>
