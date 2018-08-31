@@ -52,7 +52,7 @@ class TakePic extends Component {
         console.log(this.state);
 
         const imgdata = new FormData();
-        console.log(this.state.nickName);
+        console.log(this.state.file);
 
         imgdata.append("nickname", this.state.nickName);
         console.log(imgdata.get("nickname"))
@@ -66,10 +66,10 @@ class TakePic extends Component {
             data: imgdata,
             body: {
                 'Content-Type': 'multipart/form-data',
-            },
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
+            }
+            // headers: {
+            //     'Content-Type': 'application/x-www-form-urlencoded'
+            // },
         }).then(function(res) {
             alert(res.msg)
         }).catch(function(error){
