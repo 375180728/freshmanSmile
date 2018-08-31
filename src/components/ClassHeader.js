@@ -49,9 +49,10 @@ class ClassHeader extends Component {
                 if(this.state.is_liked) {
                     this.setState({
                         received_like: parseInt(this.state.received_like) + 1,
-                    }) else {
-                        this.setState({
-                            received_like: parseInt(this.state.received_like) - 1
+                    })
+                } else {
+                    this.setState({
+                        received_like: parseInt(this.state.received_like) - 1
                         })
                     }
                 }
