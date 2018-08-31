@@ -135,7 +135,7 @@ class NavBar extends Component {
             onPress={() => {
                 var url;
                 if(this.state.stuId.substring(0,4) == 2018){
-                    url = '/' + this.state.classId; 
+                    url = '/shows/' + this.state.classId; 
                 } else {
                     url = '/about'
                 }
