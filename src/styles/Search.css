@@ -1,0 +1,21 @@
+.search{
+    height: 0.4rem;
+    width: 100%;
+    background-color: rgb(240, 240, 240)
+}
+
+.search input {
+    float: left;
+    width: 80%;
+    height: 100%;
+    background-color: transparent;
+    border: 0;
+}
+
+.search span{
+    width: 10%;
+    float: right;
+    height: 100%;
+    line-height: 0.4rem;
+}
+

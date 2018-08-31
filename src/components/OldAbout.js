@@ -11,6 +11,7 @@ class OldAbout extends Component{
                     <img src={smileIcon}/>
                 </div>
                 <div className="sug">
+                    <div className="sugFirst">只有萌新才可以进入哦</div>
                     <div className="sugSecond">快去给他们点赞吧</div>
                 </div>
             </div>

@@ -70,7 +70,7 @@ class App extends Component {
                 <div className="container">
                     <Switch>
                         {takeRoute}
-                        <Route exact path="/shows" component={Tabs}/>
+                        <Route exact path="/shows" component={Shows}/>
                         <Route exact path={`/shows/:classId`} component={ClassList}/>
                         <Route exact path="/about" component={OldAbout}/>
                         <Redirect path="/" to={{
