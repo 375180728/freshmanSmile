@@ -20,6 +20,7 @@ class Search extends Component {
         console.log(this.state.word);
         const url = `${match.url}/` + `${this.state.word}`;
         window.loaction.pathname = url;
+    }
 
     handleWordChange(event){
         this.setState({
