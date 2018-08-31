@@ -49,6 +49,11 @@ class TakePic extends Component {
     }   
 
     handleClick(){
+        if(true){
+            alert('还未到活动时间 敬请期待');
+            return;
+        }
+
         if(!this.state.nickName){
             alert('请输入你的昵称')
             return;

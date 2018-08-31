@@ -42,7 +42,7 @@ class NewList extends Component {
         };
 
         this.match = this.props.match;
-        this.NUM_SECTIONS = 3;
+        this.NUM_SECTIONS = 15;
         this.NUM_ROWS_PER_SECTION = 4;
         this.dataBlobs = {};
         this.pageIndex = 0;
