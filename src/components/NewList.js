@@ -40,6 +40,7 @@ class NewList extends Component {
             height: document.documentElement.clientHeight * 3 / 4,
             data: [],
         };
+
         this.match = this.props.match;
         this.NUM_SECTIONS = 3;
         this.NUM_ROWS_PER_SECTION = 4;
@@ -101,17 +102,17 @@ class NewList extends Component {
         if (this.state.isLoading && !this.state.hasMore) {
             return;
         }
-        // console.log('reach end', event);
-        // this.setState({
-        //     isLoading: true
-        // });
-        // setTimeout(() => {
-        //     this.genData(++this.pageIndex);
-        //     this.setState({
-        //         dataSource: this.state.dataSource.cloneWithRowsAndSections(this.dataBlobs, this.sectionIDs, this.rowIDs),
-        //         isLoading: false,
-        //     });
-        // }, 1000);
+        console.log('reach end', event);
+        this.setState({
+            isLoading: true
+        });
+        setTimeout(() => {
+            this.genData(++this.pageIndex);
+            this.setState({
+                dataSource: this.state.dataSource.cloneWithRowsAndSections(this.dataBlobs, this.sectionIDs, this.rowIDs),
+                isLoading: false,
+            });
+        }, 1000);
     }
 
     render() {
@@ -129,14 +130,13 @@ class NewList extends Component {
         );
         let index = 0;
         const row = (rowData, sectionID, rowID) => {
-            console.log(rowData, sectionID, rowID)
             if (index > this.state.data.length ) {
                 index = 0;
             }
             const obj = this.state.data[index];
-            // console.log(this.state.data);
-            // console.log(obj)
-            // console.log(index)
+            console.log(this.state.data);
+            console.log(obj)
+            console.log(index)
             index++;
             return (
                 <NewItem obj={obj} index={index} rowID={rowID} match={this.match}/>
@@ -144,12 +144,25 @@ class NewList extends Component {
         };
 
         return (
-            <div>
-            {
-                this.state.data.length > 0 && this.state.data.map((item, index) => <NewItem obj={item} index={index} rowID={index} match={this.match}/>)
-            }
-            </div>
-        );
+            <ListView
+            ref={el => this.lv = el}
+            dataSource={this.state.dataSource}
+            renderBodyComponent={() => <MyBody />}
+            renderRow={row}
+            renderSeparator={separator}
+            style={{
+                height: this.state.height,
+                overflow: 'auto',
+            }}
+            pageSize={10}
+            onScroll={() => {
+                console.log('scroll');
+            }}
+            scrollRenderAheadDistance={500}
+            onEndReached={this.onEndReached}
+            onEndReachedThreshold={10}
+            />
+            );
     }
 }
 
