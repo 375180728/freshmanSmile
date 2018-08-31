@@ -101,17 +101,17 @@ class NewList extends Component {
         if (this.state.isLoading && !this.state.hasMore) {
             return;
         }
-        console.log('reach end', event);
-        this.setState({
-            isLoading: true
-        });
-        setTimeout(() => {
-            this.genData(++this.pageIndex);
-            this.setState({
-                dataSource: this.state.dataSource.cloneWithRowsAndSections(this.dataBlobs, this.sectionIDs, this.rowIDs),
-                isLoading: false,
-            });
-        }, 1000);
+        // console.log('reach end', event);
+        // this.setState({
+        //     isLoading: true
+        // });
+        // setTimeout(() => {
+        //     this.genData(++this.pageIndex);
+        //     this.setState({
+        //         dataSource: this.state.dataSource.cloneWithRowsAndSections(this.dataBlobs, this.sectionIDs, this.rowIDs),
+        //         isLoading: false,
+        //     });
+        // }, 1000);
     }
 
     render() {
