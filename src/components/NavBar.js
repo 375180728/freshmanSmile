@@ -135,12 +135,12 @@ class NavBar extends Component {
             onPress={() => {
                 var url;
                 if(this.state.stuId.substring(0,4) == 2018){
-                    url = '/shows/' + this.state.classId; 
+                    url = '/' + this.state.classId; 
                 } else {
                     url = '/about'
                 }
                 console.log(url);
-                this.props.history.push(url);
+                window.location.href += url;
                 this.setState({
                     selectedTab: 'greenTab',
                 });
