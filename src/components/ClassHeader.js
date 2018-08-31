@@ -45,9 +45,9 @@ class ClassHeader extends Component {
         }).then(function(res){
             console.log(res.data);
             that.setState({
-                is_liked: !this.state.is_liked,
+                is_liked: !that.state.is_liked,
             },function(){
-                if(this.state.is_liked) {
+                if(that.state.is_liked) {
                     that.setState({
                         received_like: parseInt(this.state.received_like) + 1,
                     })
