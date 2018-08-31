@@ -129,7 +129,7 @@ class ClassList extends Component {
         );
         let index = 0;
         const row = (rowData, sectionID, rowID) => {
-            if (index > this.state.data.stu_info.length - 1) {
+            if (index > this.state.data.stu_info.length) {
                 index = 0;
             }
             const obj = this.state.data.stu_info[index];

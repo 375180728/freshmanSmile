@@ -63,7 +63,6 @@ class NewList extends Component {
                 data: res.data.data 
             }) 
         });
-        this.data = this.state.data;
 
 
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
@@ -129,7 +128,7 @@ class NewList extends Component {
         );
         let index = 0;
         const row = (rowData, sectionID, rowID) => {
-            if (index > this.data.length - 1) {
+            if (index > this.data.length) {
                 index = 0;
             }
             const obj = this.state.data[index];

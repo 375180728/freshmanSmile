@@ -127,7 +127,7 @@ class NewList extends Component {
         );
         let index = 0;
         const row = (rowData, sectionID, rowID) => {
-            if (index > this.data.length - 1) {
+            if (index > this.data.length ) {
                 index = 0;
             }
             const obj = this.state.data[index];
