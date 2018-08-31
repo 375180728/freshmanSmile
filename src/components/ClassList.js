@@ -130,14 +130,15 @@ class ClassList extends Component {
         let index = 0;
         const row = (rowData, sectionID, rowID) => {
             if (index > this.state.data.stu_info.length - 1) {
-                console.log('加载完了')
+                console.log('加载完了');
+                return;
             }
             const obj = this.state.data.stu_info[index];
             console.log(this.state.data.class_info);
             index++;
             return (
                 <ClassItem obj={obj} index={index} rowID={rowID} match={this.match}/>
-                );
+            );
         };
 
         return (
