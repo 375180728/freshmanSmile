@@ -6,7 +6,7 @@ import { Link, Route } from 'react-router-dom';
 import '../styles/ShowList.css';
 
 import rankIcon from '../images/rankIcon.png';
-import scoreIcon from '../images/scoreIcon.png';
+import scoreIcon from '../images/niceNumIcon.png';
 import banner from '../images/banner.png';
 
 

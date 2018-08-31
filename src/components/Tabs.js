@@ -28,10 +28,10 @@ class TabExample extends Component {
         };
         this.tabs = [
             {
-                title: '最新'
+                title: '班级墙'
             },
             {
-                title: '最热'
+                title: '排行榜'
             },
         ];
     }
