@@ -34,6 +34,7 @@ class ClassHeader extends Component {
     }
 
     handleClick() {
+        var that = this;
         console.log('nice')
         axios({
             method: 'post',
@@ -43,15 +44,15 @@ class ClassHeader extends Component {
             }
         }).then(function(res){
             console.log(res.data);
-            this.setState({
+            that.setState({
                 is_liked: !this.state.is_liked,
             },function(){
                 if(this.state.is_liked) {
-                    this.setState({
+                    that.setState({
                         received_like: parseInt(this.state.received_like) + 1,
                     })
                 } else {
-                    this.setState({
+                    that.setState({
                         received_like: parseInt(this.state.received_like) - 1,
                     })
                 }
