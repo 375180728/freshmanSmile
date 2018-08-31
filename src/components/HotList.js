@@ -65,6 +65,7 @@ class NewList extends Component {
         });
         this.data = this.state.data;
 
+        console.log(this.state.data)
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
         // simulate initial Ajax
         setTimeout(() => {
@@ -129,7 +130,7 @@ class NewList extends Component {
         let index = 0;
         console.log(this.data.length);
         const row = (rowData, sectionID, rowID) => {
-            if (index > this.data.length - 1) {
+            if (index > this.state.data.length - 1) {
                 console.log('加载完了');
                 return;
             }

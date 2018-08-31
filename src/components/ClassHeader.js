@@ -19,6 +19,7 @@ class ClassHeader extends Component {
             is_liked: '',
             received_like: '',
             classId: '',
+            rank: '',
         };
         console.log(this.props.obj);
     }
@@ -28,6 +29,7 @@ class ClassHeader extends Component {
             received_like: this.props.obj.received_like,
             is_liked: this.props.obj.is_liked,
             classId: this.props.obj.class_id,
+            rank: this.props.obj.class_rank,
         }, function() {
             console.log(this.state);
         });
@@ -112,7 +114,7 @@ class ClassHeader extends Component {
                             {lovesIcon}
                         </span>
                         <span className="loveNum">{this.state.received_like}</span>
-                        <span className="place">10</span>
+                        <span className="place">{this.state.rank}</span>
                         <img src={rankIcon}/>
                     </span>
                 </div>
