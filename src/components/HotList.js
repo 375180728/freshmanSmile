@@ -61,7 +61,6 @@ class HotList extends Component {
                 data: res.data.data 
             }) 
         });
-        this.data = this.state.data;
 
 
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
@@ -116,6 +115,9 @@ class HotList extends Component {
     }
 
     render() {
+        if(!this.state.data){
+            return (<div></div>)
+        }
         const separator = (sectionID, rowID) => (
             <div
             key={`${sectionID}-${rowID}`}
@@ -127,7 +129,7 @@ class HotList extends Component {
         );
         let index = 0;
         const row = (rowData, sectionID, rowID) => {
-            if (index > this.data.length) {
+            if (index > this.state.data.length) {
                 index = 0;
             }
             const obj = this.state.data[index];

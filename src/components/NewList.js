@@ -59,9 +59,10 @@ class NewList extends Component {
             console.log(res.data)
             that.setState({
                 data: res.data.data 
+            },function(){
+                console.log(this.state.data);
             }) 
         });
-        this.data = this.state.data;
 
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
         // simulate initial Ajax
@@ -115,6 +116,9 @@ class NewList extends Component {
     }
 
     render() {
+        if(!this.state.data){
+            return (<div></div>)
+        }
         const separator = (sectionID, rowID) => (
             <div
             key={`${sectionID}-${rowID}`}
@@ -126,12 +130,13 @@ class NewList extends Component {
         );
         let index = 0;
         const row = (rowData, sectionID, rowID) => {
-            if (index > this.data.length ) {
+            if (index > this.state.data.length ) {
                 index = 0;
             }
             const obj = this.state.data[index];
             console.log(this.state.data);
             console.log(obj)
+            console.log(index)
             index++;
             return (
                 <NewItem obj={obj} index={index} rowID={rowID} match={this.match}/>
