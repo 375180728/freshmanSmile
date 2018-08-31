@@ -39,9 +39,9 @@ class TakePic extends Component {
             nickName: '',
             description: '',
             image: '',
+            file: '',
             isAdded: false,
         }
-        this.imgdata = new FormData(),
         this.handleClick = this.handleClick.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleTextChange = this.handleTextChange.bind(this);
@@ -49,11 +49,17 @@ class TakePic extends Component {
     }   
 
     handleClick(){
-        alert(this.imgdata)
+        const imgdata = new FormData(),
+        console.log(this.state)
+        imgdata.append("nickname", this.state.nickName),
+        imgdata.append("descp", this.state.description),
+        imgdata.append("image", this.state.file),
+
+        alert(imgdata)
         axios({
             method: 'post',
             url: 'https://wx.redrock.team/orientation-plus/indv/upload',
-            data: this.imgdata,
+            data: imgdata,
             // body: {
             //     'Content-Type': 'multipart/form-data',
             // },
@@ -68,24 +74,14 @@ class TakePic extends Component {
     }
 
     handleInputChange(event){
-        var that = this;
         this.setState({
             nickName: event.target.value,
-        },function(){
-            this.setState({
-                imgdata: that.imgdata.append("nickname", this.state.nickName),
-            },function(){
-                console.log(this.state)
-            })
         })
     }
 
     handleTextChange(event){
         this.setState({
             description: event.target.value,
-            imgdata: this.state.imgdata.append("descp", event.target.value),
-        },function(){
-            console.log(this.imgdata);
         })
     }
 
@@ -94,9 +90,9 @@ class TakePic extends Component {
         console.log(file)
         console.log(this.state)
         this.setState({
-            imgdata: this.state.imgdata.append("image", file),
+            file: file,
         },function(){
-            console.log(this.imgdata);
+            console.log(this.state)
         })
 
         const maxsize = 5000 * 1024;
