@@ -57,10 +57,10 @@ class NewList extends Component {
             method: 'get',
             url: 'https://wx.redrock.team/orientation-plus/class/list?type=latest',
         }).then(function(res) {
-            console.log(res.data);
+            console.log(res.data)
             that.setState({
-                data: res.data.data
-            });
+                data: res.data.data 
+            }) 
         });
         this.data = this.state.data;
 
@@ -128,19 +128,15 @@ class NewList extends Component {
         let index = 0;
         const row = (rowData, sectionID, rowID) => {
             if (index > this.data.length - 1) {
-                return;
+                index = 0;
             }
-
-            if (index < this.data.length) {
-                const obj = this.state.data[index];
-                console.log(this.state.data);
-                console.log(obj);
-                index++;
-                return (
-                    <NewItem obj={obj} index={index} rowID={rowID} match={this.match}/>
+            const obj = this.state.data[index];
+            console.log(this.state.data);
+            console.log(obj)
+            index++;
+            return (
+                <NewItem obj={obj} index={index} rowID={rowID} match={this.match}/>
                 );
-            }
-
         };
 
         return (

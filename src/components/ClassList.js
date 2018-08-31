@@ -33,7 +33,7 @@ class ClassList extends Component {
             data: ''
         };
 
-
+        
         this.match = this.props.match;
         this.NUM_SECTIONS = 3;
         this.NUM_ROWS_PER_SECTION = 4;
@@ -44,7 +44,7 @@ class ClassList extends Component {
     }
 
     componentDidMount() {
-        console.log(this.match);
+        console.log(this.match)
         var that = this;
         axios({
             method: 'get',
@@ -55,12 +55,12 @@ class ClassList extends Component {
         }).then(function(res) {
             console.log(res.data);
             that.setState({
-                data: res.data.data
-            }, function() {
-                console.log(this.state.data);
-            });
+                data: res.data.data 
+            },function(){
+                console.log(this.state.data)
+            }) 
         });
-        console.log(this.state.data);
+        console.log(this.state.data)
 
         // const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
         // simulate initial Ajax
@@ -113,9 +113,9 @@ class ClassList extends Component {
     }
 
     render() {
-        if (!this.state.data) {
+        if(!this.state.data){
             console.log(1);
-            return (<div></div>);
+            return(<div></div>)
         }
 
         const separator = (sectionID, rowID) => (
@@ -130,19 +130,14 @@ class ClassList extends Component {
         let index = 0;
         const row = (rowData, sectionID, rowID) => {
             if (index > this.state.data.stu_info.length - 1) {
-                console.log('加载完了');
-                return;
+                index = 0;
             }
-
-            if (index < this.state.data.stu_info.length) {
-                const obj = this.state.data.stu_info[index];
-                console.log(this.state.data.class_info);
-                index++;
-                return (
-                    <ClassItem obj={obj} index={index} rowID={rowID} match={this.match}/>
-                );
-            }
-
+            const obj = this.state.data.stu_info[index];
+            console.log(this.state.data.class_info);
+            index++;
+            return (
+                <ClassItem obj={obj} index={index} rowID={rowID} match={this.match}/>
+            );
         };
 
         return (
