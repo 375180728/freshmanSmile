@@ -32,15 +32,13 @@ class NewItem extends Component {
     }
 
     render() {
+        if(!this.props.obj){
+            return (<div></div>)
+        }
         const obj = this.props.obj;
         console.log(obj);
         const rowID = this.props.rowID;
         const index = this.props.index;
-        if(obj == null){
-            alert('暂时没人传照片');
-            window.loaction = './takePic';
-            return;
-        }
         const time = this.timestampToTime(obj.date);
         const match = this.match;
         return (
