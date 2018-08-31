@@ -7,7 +7,7 @@
 .showOneShow{
     position: relative;
     width: 90%;
-    height: 11.52rem;
+    height: 10.82rem;
     margin: 0 auto;
     background-color: #ffffff;
     border-radius: 6px;
@@ -25,7 +25,7 @@
 .addPhoto{
     position: relative;
     width: 90%;
-    height: 5.56rem;
+    height: 4.96rem;
     margin: 0 auto;
     border: 2px dashed #d9d9d9;
     border-radius: 2%;
@@ -37,7 +37,7 @@
     width: 0.933333rem;
     height: 0.933333rem;
     margin: 0 auto;
-    margin-top: 2.133333rem;
+    margin-top: 1.503333rem;
 }
 
 .adds{
