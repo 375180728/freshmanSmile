@@ -70,9 +70,12 @@ class TakePic extends Component {
     handleInputChange(event){
         this.setState({
             nickName: event.target.value,
-            imgdata: this.state.imgdata.append("nickname", event.target.value),
         },function(){
-            console.log(this.state.imgdata);
+            this.setState({
+                imgdata: this.state.imgdata.append("nickname", this.state.nickName),
+            },function(){
+                console.log(this.state)
+            })
         })
     }
 
