@@ -1,7 +1,7 @@
 .search{
     height: 1rem;
     line-height: 1rem;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     margin-top: 0.24rem;
     margin-bottom: 0.24rem;
@@ -11,7 +11,7 @@
 .search input {
     float: left;
     padding-left: 0.566667rem;
-    width: 100%;
+    width: 80%;
     height: 100%;
     background-color: transparent;
     border: 0;
