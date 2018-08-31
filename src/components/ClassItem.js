@@ -18,6 +18,9 @@ class ClassItem extends Component {
     }
 
     render() {
+        if(!this.obj){
+            return(<div></div>)
+        }
         const obj = this.props.obj;
         const rowID = this.props.rowID;
         const match = this.match;
