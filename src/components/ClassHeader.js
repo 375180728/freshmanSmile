@@ -39,7 +39,7 @@ class ClassHeader extends Component {
             method: 'post',
             url: 'https://wx.redrock.team/orientation-plus/class/like',
             params: {
-                class_id = this.state.classId
+                class_id: this.state.classId
             }
         }).then(function(res){
             console.log(res.data);
