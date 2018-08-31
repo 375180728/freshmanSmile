@@ -63,6 +63,7 @@ class NewList extends Component {
                 data: res.data.data 
             }) 
         });
+        this.data = this.state.data;
 
 
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
