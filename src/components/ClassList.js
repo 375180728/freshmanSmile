@@ -48,7 +48,7 @@ class ClassList extends Component {
         var that = this;
         axios({
             method: 'get',
-            url: 'https://wx.redrock.team/orientation-plus/class/list/info',
+            url: 'https://wx.idsbllp.cn/orientation-plus/class/list/info',
             params: {
                 class_id: this.match.params.classId,
             }

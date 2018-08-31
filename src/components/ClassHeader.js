@@ -42,7 +42,7 @@ class ClassHeader extends Component {
         console.log('nice')
         axios({
             method: 'post',
-            url: 'https://wx.redrock.team/orientation-plus/class/like',
+            url: 'https://wx.idsbllp.cn/orientation-plus/class/like',
             params: {
                 class_id: this.state.classId
             }

@@ -27,7 +27,7 @@ class App extends Component {
         const that = this;
         axios({
             method: 'get',
-            url: 'https://wx.redrock.team/orientation-plus/indv/info',
+            url: 'https://wx.idsbllp.cn/orientation-plus/indv/info',
         }).then(function(res) {
             that.setState({
                 data: res.data.data,
