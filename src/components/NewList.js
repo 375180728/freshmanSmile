@@ -40,7 +40,6 @@ class NewList extends Component {
             height: document.documentElement.clientHeight * 3 / 4,
             data: [],
         };
-
         this.match = this.props.match;
         this.NUM_SECTIONS = 3;
         this.NUM_ROWS_PER_SECTION = 4;
@@ -130,13 +129,14 @@ class NewList extends Component {
         );
         let index = 0;
         const row = (rowData, sectionID, rowID) => {
+            console.log(rowData, sectionID, rowID)
             if (index > this.state.data.length ) {
                 index = 0;
             }
             const obj = this.state.data[index];
-            console.log(this.state.data);
-            console.log(obj)
-            console.log(index)
+            // console.log(this.state.data);
+            // console.log(obj)
+            // console.log(index)
             index++;
             return (
                 <NewItem obj={obj} index={index} rowID={rowID} match={this.match}/>
