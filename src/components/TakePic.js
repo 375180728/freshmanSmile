@@ -200,3 +200,4 @@ class TakePic extends Component {
 }
 
 export default TakePic;
+
