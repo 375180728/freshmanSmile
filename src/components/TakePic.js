@@ -50,13 +50,17 @@ class TakePic extends Component {
 
     handleClick(){
         console.log(this.state);
+
         const imgdata = new FormData();
+        console.log(this.state.nickName);
+
         imgdata.append("nickname", this.state.nickName);
+        console.log(imgdata)
         imgdata.append("descp", this.state.description);
         imgdata.append("image", this.state.file);
 
-        alert(imgdata);
-        
+        console(imgdata);
+
         axios({
             method: 'post',
             url: 'https://wx.redrock.team/orientation-plus/indv/upload',
@@ -89,7 +93,6 @@ class TakePic extends Component {
     handleFileChange(event){
         const file = event.target.files[0];
         console.log(file)
-        console.log(this.state)
         this.setState({
             file: file,
         },function(){
