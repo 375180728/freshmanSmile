@@ -7,7 +7,8 @@
 }
 
 .firstRowLeft{
-    width: 4rem;
+    float: left;
+    width: 3rem;
     margin-top: 0.5rem;
     white-space: nowrap;
     overflow: hidden;

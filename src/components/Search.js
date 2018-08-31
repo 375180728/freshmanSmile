@@ -32,7 +32,7 @@ class Search extends Component {
     render(){
         return (
             <div className="search">
-                <input type="text" onChange={this.handleWordChange} value={this.state.word}/>
+                <input type="text" onChange={this.handleWordChange} value={this.state.word} placeholder="请输入班级号进行搜索"/>
                 <span className="searchIcon">
                     <img src={searchIcon}/>
                 </span>
