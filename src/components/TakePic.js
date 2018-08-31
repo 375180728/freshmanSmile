@@ -58,7 +58,7 @@ class TakePic extends Component {
         console.log(imgdata.get("nickname"))
         imgdata.append("descp", this.state.description);
         imgdata.append("image", this.state.file);
-        console.log(imgdata.get(file));
+        console.log(imgdata.get("file"));
 
         axios({
             method: 'post',
