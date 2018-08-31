@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { ListView } from 'antd-mobile';
-import { Route }from 'react-router-dom'
+import { Route } from 'react-router-dom';
 import axios from 'axios';
 
 import '../styles/ShowList.css';
@@ -11,7 +11,7 @@ import HotItem from './HotItem';
 import rankIcon from '../images/rankIcon.png';
 import niceNumIcon from '../images/niceNumIcon.png';
 import banner from '../images/banner.png';
- 
+
 function MyBody(props) {
     return (
         <div className="bannerContainer my-body">
@@ -41,7 +41,7 @@ class HotList extends Component {
             data: []
         };
 
-        
+
 
         this.match = this.props.match;
         this.NUM_SECTIONS = 3;
@@ -58,14 +58,14 @@ class HotList extends Component {
             method: 'get',
             url: 'https://wx.redrock.team/orientation-plus/class/list?type=hottest',
         }).then(function(res) {
-            console.log(res.data)
+            console.log(res.data);
             that.setState({
-                data: res.data.data 
-            }) 
+                data: res.data.data
+            });
         });
         this.data = this.state.data;
 
-        console.log(this.state.data)
+        console.log(this.state.data);
         const hei = document.documentElement.clientHeight - ReactDOM.findDOMNode(this.lv).parentNode.offsetTop;
         // simulate initial Ajax
         setTimeout(() => {
@@ -133,11 +133,15 @@ class HotList extends Component {
                 console.log('加载完了');
                 return;
             }
-            const obj = this.state.data[index];
-            index++;
-            return (
-                <HotItem obj={obj} index={index} rowID={rowID} match={this.match}/>
-            );
+
+            if (index < this.state.data.length) {
+                const obj = this.state.data[index];
+                index++;
+                return (
+                    <HotItem obj={obj} index={index} rowID={rowID} match={this.match}/>
+                );
+            }
+
         };
 
         return (

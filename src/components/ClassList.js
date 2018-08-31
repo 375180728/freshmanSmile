@@ -140,7 +140,7 @@ class ClassList extends Component {
                 index++;
                 return (
                     <ClassItem obj={obj} index={index} rowID={rowID} match={this.match}/>
-                    );
+                );
             }
 
         };
