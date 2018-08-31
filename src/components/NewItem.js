@@ -58,10 +58,7 @@ class NewItem extends Component {
                                 <img className="niceIcon" src={scoreIcon}/>
                                 <span className="niceNum">{obj.score}</span>
                             </span> 
-                            <span className="rank">
-                                <img className="rankIcon" src={clockIcon}/>
-                                <span className="rankNum">{time}</span>
-                            </span>                       
+                            
                         </div>
                     </div>
                 </Link>
