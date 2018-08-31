@@ -1,7 +1,7 @@
 import React, {Component} from 'react'; 
 import { Route, Link } from 'react-router-dom';
 
-
+import searchIcon from '../images/searchIcon'
 import '../styles/Search.css'
 
 class Search extends Component {
@@ -34,6 +34,9 @@ class Search extends Component {
             <div className="search">
                 <input type="text" onChange={this.handleWordChange} value={this.state.word}/>
                 <span onClick={this.handleClick}>搜索</span>
+                <span className="searchIcon">
+                    <img src={searchIcon}/>
+                </span>
             </div>
         )
     }
