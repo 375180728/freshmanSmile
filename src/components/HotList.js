@@ -54,7 +54,7 @@ class HotList extends Component {
         var that = this;
         axios({
             method: 'get',
-            url: 'https://wx.idsbllp.cn/orientation-plus/class/list?type=all',
+            url: 'https://wx.idsbllp.cn/orientation-plus/class/list?type=hottest',
         }).then(function(res) {
             console.log(res.data)
             that.setState({

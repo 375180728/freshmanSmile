@@ -39,29 +39,42 @@ class ClassHeader extends Component {
     }
 
     handleClick() {
-        var that = this;
-        console.log('nice')
-        axios({
-            method: 'post',
-            url: 'https://wx.idsbllp.cn/orientation-plus/class/like',
-            params: {
-                class_id: this.state.classId
+        // var that = this;
+        // console.log('nice')
+        // axios({
+        //     method: 'post',
+        //     url: 'https://wx.idsbllp.cn/orientation-plus/class/like',
+        //     params: {
+        //         class_id: this.state.classId
+        //     }
+        // }).then(function(res){
+        //     console.log(res.data);
+        //     that.setState({
+        //         is_liked: !that.state.is_liked,
+        //     },function(){
+        //         if(that.state.is_liked) {
+        //             that.setState({
+        //                 received_like: parseInt(this.state.received_like) + 1,
+        //             })
+        //         } else {
+        //             that.setState({
+        //                 received_like: parseInt(this.state.received_like) - 1,
+        //             })
+        //         }
+        //     })
+        // })
+        this.setState({
+            is_liked: !this.staet.is_liked,
+        },function(){
+            if(this.state.is_liked){
+                this.setState({
+                    received_like: parseInt(this.state.received_like) + 1,
+                })
+            } else {
+                this.setState({
+                    received_like: parseInt(this.state.received_like) - 1,
+                })
             }
-        }).then(function(res){
-            console.log(res.data);
-            that.setState({
-                is_liked: !that.state.is_liked,
-            },function(){
-                if(that.state.is_liked) {
-                    that.setState({
-                        received_like: parseInt(this.state.received_like) + 1,
-                    })
-                } else {
-                    that.setState({
-                        received_like: parseInt(this.state.received_like) - 1,
-                    })
-                }
-            })
         })
     }
 
